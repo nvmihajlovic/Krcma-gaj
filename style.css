@@ -66,7 +66,7 @@ html.winter-theme body {
 }
 
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: auto;
     overflow-x: hidden;
     scroll-padding-top: 100px;
 }
@@ -74,10 +74,6 @@ html {
 @media (prefers-reduced-motion: no-preference) {
     html {
         scroll-behavior: auto;
-    }
-    
-    html:focus-within {
-        scroll-behavior: smooth;
     }
 }
 
@@ -1339,36 +1335,60 @@ body.winter-theme .hero-title-small {
     bottom: 40px;
     left: 50%;
     transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 0.95rem;
-    animation: scrollBounce 2s ease-in-out infinite;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    font-weight: 500;
     cursor: pointer;
     transition: all 0.3s ease;
+    z-index: 10;
 }
 
 .scroll-indicator:hover {
-    color: rgba(255, 255, 255, 1);
-    transform: translateX(-50%) scale(1.1);
+    transform: translateX(-50%) scale(1.15);
 }
 
-.scroll-indicator i {
-    font-size: 1.2rem;
-    animation: arrowBounce 1.5s ease-in-out infinite;
+.mouse-icon {
+    width: 32px;
+    height: 50px;
+    border: 3px solid var(--primary-color);
+    border-radius: 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    box-shadow: 0 0 30px var(--primary-color);
+    transition: all 0.3s ease;
 }
 
-@keyframes scrollBounce {
-    0%, 100% {
-        transform: translateX(-50%) translateY(0);
+.scroll-indicator:hover .mouse-icon {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 40px var(--primary-color);
+}
+
+[data-theme="winter"] .mouse-icon {
+    border-color: var(--primary-light);
+    box-shadow: 0 0 30px var(--primary-light);
+}
+
+[data-theme="winter"] .scroll-indicator:hover .mouse-icon {
+    border-color: var(--primary-light);
+    box-shadow: 0 0 40px var(--primary-light);
+}
+
+.mouse-wheel {
+    width: 4px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 4px;
+    animation: mouseScroll 2s ease-in-out infinite;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+@keyframes mouseScroll {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
     }
-    50% {
-        transform: translateX(-50%) translateY(-10px);
+    100% {
+        opacity: 0;
+        transform: translateY(16px);
     }
 }
 

@@ -781,36 +781,43 @@ window.addEventListener('scroll', setActiveNavLink);
 // ================================
 // Глатко скроловање са убрзањем/успоравањем
 // ================================
+let isScrolling = false;
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         const href = this.getAttribute('href');
         if (href !== '#' && href !== '') {
             e.preventDefault();
+            
+            // Спречи нови scroll ако је један већ у току
+            if (isScrolling) return;
+            
             const target = document.querySelector(href);
             if (target) {
+                isScrolling = true;
                 const targetPosition = target.offsetTop - 80;
                 const startPosition = window.pageYOffset;
                 const distance = targetPosition - startPosition;
-                const duration = 1200; // 1.2 секунде за елегантну трanzицију
+                const duration = 800; // Скраћено на 0.8s за бржи осећај
                 let start = null;
 
                 // Easing функција за глатко убрзање и успоравање
-                function easeInOutCubic(t) {
-                    return t < 0.5
-                        ? 4 * t * t * t
-                        : 1 - Math.pow(-2 * t + 2, 3) / 2;
+                function easeInOutQuad(t) {
+                    return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
                 }
 
                 function animation(currentTime) {
                     if (start === null) start = currentTime;
                     const timeElapsed = currentTime - start;
                     const progress = Math.min(timeElapsed / duration, 1);
-                    const ease = easeInOutCubic(progress);
+                    const ease = easeInOutQuad(progress);
                     
                     window.scrollTo(0, startPosition + distance * ease);
                     
                     if (timeElapsed < duration) {
                         requestAnimationFrame(animation);
+                    } else {
+                        isScrolling = false;
                     }
                 }
 
