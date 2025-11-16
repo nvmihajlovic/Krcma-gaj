@@ -1031,7 +1031,11 @@ body.winter-theme .hamburger span {
 }
 
 .hamburger.active span {
-    background: white;
+    background: var(--primary-color);
+}
+
+body.winter-theme .hamburger.active span {
+    background: var(--primary-light);
 }
 
 .hamburger.active span:nth-child(1) {
@@ -6064,9 +6068,9 @@ body.winter-theme textarea:focus-visible {
         left: 0;
         width: 100%;
         height: calc(100vh - 80px);
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.85), rgba(248, 249, 250, 0.9));
-        backdrop-filter: blur(20px) saturate(180%);
-        -webkit-backdrop-filter: blur(20px) saturate(180%);
+        background: linear-gradient(135deg, rgba(44, 74, 62, 0.95), rgba(26, 46, 37, 0.97));
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
         flex-direction: column;
         padding: 40px 30px;
         gap: 0;
@@ -6079,7 +6083,9 @@ body.winter-theme textarea:focus-visible {
     }
     
     body.winter-theme .nav-menu {
-        background: linear-gradient(135deg, rgba(240, 248, 255, 0.85), rgba(230, 245, 255, 0.9));
+        background: linear-gradient(135deg, rgba(30, 58, 82, 0.95), rgba(13, 31, 45, 0.97));
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
     }
     
     .nav-menu.active {
