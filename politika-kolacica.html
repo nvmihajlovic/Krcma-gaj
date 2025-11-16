@@ -53,7 +53,7 @@
             <button class="language-toggle" id="language-toggle" aria-label="Change Language">
                 <span class="lang-flag sr-flag">🇷🇸</span>
                 <span class="lang-flag en-flag">🇬🇧</span>
-                <span class="lang-text">EN</span>
+                <span class="lang-text"></span>
             </button>
             
             <ul class="nav-menu" id="nav-menu">
@@ -373,25 +373,44 @@
             <div class="footer-content">
                 <div class="footer-column footer-brand">
                     <div class="footer-logo">
-                        <a href="index.html">
-                            <img src="images/logo.webp" alt="Крчма Гај">
+                        <img src="images/logo.webp" alt="Крчма Гај Logo" onerror="this.src='images/logo.png'">
+                    </div>
+                    <p class="footer-description" data-i18n="footer.description">
+                        Ваш омиљени етно ресторан на Златибору. Традиционална јела припремљена са љубављу.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/krcmagaj.zlatibor" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/krcmagaj/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-link">
+                            <i class="fab fa-instagram"></i>
                         </a>
                     </div>
-                    <p class="footer-description" data-i18n="footer.description">Ваш омиљени етно ресторан на Златибору.</p>
                 </div>
 
                 <div class="footer-column">
-                    <h4 data-i18n="footer.quickLinks">Брзе везе</h4>
+                    <h4 data-i18n="footer.links.title">Брзе везе</h4>
                     <ul class="footer-links">
                         <li><a href="index.html#pocetna"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.home">Почетна</span></a></li>
+                        <li><a href="index.html#o-nama"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.about">О нама</span></a></li>
                         <li><a href="index.html#jelovnik"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.menu">Јеловник</span></a></li>
+                        <li><a href="index.html#karta-pica"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.drinks">Карта пића</span></a></li>
+                        <li><a href="index.html#galerija"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.gallery">Галерија</span></a></li>
                         <li><a href="index.html#kontakt"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.contact">Контакт</span></a></li>
                     </ul>
                 </div>
 
                 <div class="footer-column">
-                    <h4 data-i18n="footer.contact">Контакт</h4>
+                    <h4 data-i18n="footer.contact.title">Контакт</h4>
                     <ul class="footer-contact">
+                        <li>
+                            <div class="footer-contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="footer-contact-text">
+                                <span data-i18n="footer.address">Гајеви, Златибор, Србија</span>
+                            </div>
+                        </li>
                         <li>
                             <div class="footer-contact-icon">
                                 <i class="fas fa-phone"></i>
@@ -400,7 +419,25 @@
                                 <a href="tel:+381313841962">+381 31 3841962</a>
                             </div>
                         </li>
+                        <li>
+                            <div class="footer-contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="footer-contact-text">
+                                <span data-i18n="footer.hours">Радно време: 09:00 - 22:00</span>
+                            </div>
+                        </li>
                     </ul>
+                </div>
+
+                <div class="footer-column footer-badge">
+                    <h4 data-i18n="footer.recommendation">Препорука</h4>
+                    <a id="b-circledLeaves27" href="https://restaurantguru.com/Tavern-Gaj-Zlatibor" target="_blank" rel="noopener noreferrer">
+                        <img src="https://awards.infcdn.net/img_award/25.png" alt="Restaurant Guru 2023 - 2024 Award" loading="lazy">
+                    </a>
+                    <a href="tel:+381313841962" class="footer-cta-btn" data-i18n="footer.callUs">
+                        <i class="fas fa-phone"></i> Позовите нас
+                    </a>
                 </div>
             </div>
 
