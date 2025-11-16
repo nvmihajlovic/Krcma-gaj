@@ -1253,14 +1253,40 @@ body.winter-theme .particle::before {
     gap: 10px;
     color: rgba(255, 255, 255, 0.9);
     font-size: 0.95rem;
-    animation: bounce 2s infinite;
+    animation: scrollBounce 2s ease-in-out infinite;
     letter-spacing: 1px;
     text-transform: uppercase;
     font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.scroll-indicator:hover {
+    color: rgba(255, 255, 255, 1);
+    transform: translateX(-50%) scale(1.1);
 }
 
 .scroll-indicator i {
     font-size: 1.2rem;
+    animation: arrowBounce 1.5s ease-in-out infinite;
+}
+
+@keyframes scrollBounce {
+    0%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+}
+
+@keyframes arrowBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(8px);
+    }
 }
 
 /* ================================

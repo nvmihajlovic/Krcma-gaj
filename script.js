@@ -90,6 +90,30 @@ if (typingText) {
 }
 
 // ================================
+// Scroll Indicator - Smooth scroll
+// ================================
+const scrollIndicator = document.querySelector('.scroll-indicator');
+if (scrollIndicator) {
+    scrollIndicator.addEventListener('click', () => {
+        const aboutSection = document.getElementById('o-nama');
+        if (aboutSection) {
+            aboutSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    });
+    
+    // Keyboard accessibility
+    scrollIndicator.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            const aboutSection = document.getElementById('o-nama');
+            if (aboutSection) {
+                aboutSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+    });
+}
+
+// ================================
 // Restaurant Guru искачући прозор
 // ================================
 const guruPopup = document.getElementById('guru-popup');
