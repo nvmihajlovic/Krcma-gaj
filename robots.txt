@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Disallow demo/test pages
+Disallow: /toast-demo.html
+Disallow: /weather-demo.html
+
+# Sitemap
+Sitemap: https://krcmagaj.rs/sitemap.xml
