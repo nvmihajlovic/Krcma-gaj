@@ -1193,7 +1193,7 @@ body.winter-theme .particle::before {
 
 @keyframes snowfall {
     0% {
-        transform: translateY(-100px) translateX(0) rotate(0deg);
+        transform: translateY(0) translateX(0) rotate(0deg);
         opacity: 0;
     }
     10% {
@@ -1203,7 +1203,7 @@ body.winter-theme .particle::before {
         opacity: 1;
     }
     100% {
-        transform: translateY(100vh) translateX(20px) rotate(360deg);
+        transform: translateY(calc(100vh + 100px)) translateX(30px) rotate(360deg);
         opacity: 0;
     }
 }
