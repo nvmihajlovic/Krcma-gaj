@@ -2913,8 +2913,34 @@ body.winter-theme .social-links a:hover {
     box-shadow: var(--shadow-md);
 }
 
-/* DESKTOP - Min-width 769px */
-@media (min-width: 769px) {
+/* TABLET - Min-width 769px to 1024px */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .contact-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+    }
+    
+    .contact-info .section-header {
+        text-align: center;
+    }
+    
+    .contact-details {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .contact-form-wrapper {
+        padding: 35px;
+        max-width: 700px;
+        margin: 0 auto;
+        width: 100%;
+    }
+}
+
+/* DESKTOP - Min-width 1025px */
+@media (min-width: 1025px) {
     .contact-wrapper {
         display: grid;
         grid-template-columns: 1fr 1.2fr;
@@ -5970,6 +5996,52 @@ body.winter-theme textarea:focus-visible {
     
     .contact-info .section-header {
         text-align: center;
+    }
+}
+
+/* Tablet Specific - 769px to 1024px */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Menu Grid - 2 columns for tablets */
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+    
+    /* Gallery - 2 columns for tablets */
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    /* About Features - 2 columns */
+    .about-features {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+    
+    /* Hero buttons side by side on tablets */
+    .hero-buttons {
+        flex-direction: row;
+        justify-content: center;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    
+    .hero-buttons .btn {
+        flex: 1;
+        min-width: 0;
+    }
+    
+    /* Footer 2 columns */
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+    
+    /* Testimonials optimal for tablet */
+    .testimonials-wrapper {
+        max-width: 700px;
+        margin: 0 auto;
     }
 }
 
