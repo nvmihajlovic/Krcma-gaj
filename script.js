@@ -179,11 +179,33 @@ console.log('Theme toggle:', themeToggle);
 console.log('Theme suggestion element:', themeSuggestion);
 console.log('Theme suggestion text:', themeSuggestionText);
 
-// Провери сачувану тему или користи летњу као подразумевану
-const currentTheme = localStorage.getItem('theme') || 'summer';
-const hasSeenSuggestion = localStorage.getItem('themeToggleSeen');
+// Аутоматско постављање теме на основу датума
+function getSeasonalTheme() {
+    const today = new Date();
+    const month = today.getMonth() + 1; // 1-12
+    const day = today.getDate();
+    
+    // Зимска тема: 16. новембар - 15. фебруар
+    // Летња тема: 16. фебруар - 15. новембар
+    if ((month === 11 && day >= 16) || // од 16. новембра
+        (month === 12) ||                // цео децембар
+        (month === 1) ||                 // цео јануар
+        (month === 2 && day <= 15)) {   // до 15. фебруара
+        return 'winter';
+    }
+    return 'summer';
+}
 
+// Провери сачувану тему или користи сезонску као подразумевану
+const seasonalTheme = getSeasonalTheme();
+const savedTheme = localStorage.getItem('theme');
+const currentTheme = savedTheme || seasonalTheme;
+
+console.log('Seasonal theme:', seasonalTheme);
+console.log('Saved theme:', savedTheme);
 console.log('Current theme:', currentTheme);
+
+const hasSeenSuggestion = localStorage.getItem('themeToggleSeen');
 console.log('Has seen suggestion:', hasSeenSuggestion);
 
 if (currentTheme === 'winter') {
