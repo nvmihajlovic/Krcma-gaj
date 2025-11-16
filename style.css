@@ -1110,21 +1110,81 @@ body.winter-theme .hero-overlay {
     pointer-events: none;
 }
 
-.particle {
+/* Summer theme - sun rays effect */
+.particles::before {
+    content: '';
     position: absolute;
-    width: 4px;
-    height: 4px;
-    background: rgba(244, 162, 97, 0.6);
-    border-radius: 50%;
-    animation: float-particle 15s infinite ease-in-out;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+        from 0deg,
+        transparent 0deg,
+        rgba(255, 193, 7, 0.03) 30deg,
+        transparent 60deg,
+        transparent 120deg,
+        rgba(255, 193, 7, 0.03) 150deg,
+        transparent 180deg,
+        transparent 240deg,
+        rgba(255, 193, 7, 0.03) 270deg,
+        transparent 300deg
+    );
+    animation: rotate-sun-rays 40s linear infinite;
 }
 
-/* Winter theme - snowflakes instead of particles */
+@keyframes rotate-sun-rays {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Winter theme - no sun rays */
+body.winter-theme .particles::before {
+    display: none;
+}
+
+.particle {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, rgba(255, 193, 7, 0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(20px);
+    animation: float-shimmer 20s infinite ease-in-out;
+    opacity: 0.6;
+}
+
+@keyframes float-shimmer {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.3;
+    }
+    25% {
+        transform: translate(30px, -20px) scale(1.2);
+        opacity: 0.6;
+    }
+    50% {
+        transform: translate(-20px, -40px) scale(0.9);
+        opacity: 0.4;
+    }
+    75% {
+        transform: translate(40px, -30px) scale(1.1);
+        opacity: 0.5;
+    }
+}
+
+/* Winter theme - snowflakes instead of shimmer */
 body.winter-theme .particle {
     width: 8px;
     height: 8px;
     background: transparent;
     border-radius: 0;
+    filter: none;
+    animation: float-particle 15s infinite ease-in-out;
 }
 
 body.winter-theme .particle::before {
