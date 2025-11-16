@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toast Notifications Demo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="toast-notifications.css?v=1">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+        }
+        .demo-container {
+            background: white;
+            padding: 60px;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 500px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            color: #1f2937;
+        }
+        p {
+            color: #6b7280;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+        .demo-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .demo-btn {
+            padding: 18px 32px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+        .demo-btn.success {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+        }
+        .demo-btn.success:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 24px rgba(16, 185, 129, 0.4);
+        }
+        .demo-btn.error {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            color: white;
+        }
+        .demo-btn.error:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 24px rgba(239, 68, 68, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <h1>🎉 Toast Demo</h1>
+        <p>Тестирај професионалне нотификације за контакт форму</p>
+        
+        <div class="demo-buttons">
+            <button class="demo-btn success" onclick="showSuccessToast()">
+                <i class="fas fa-check-circle"></i>
+                Прикажи успешну поруку
+            </button>
+            
+            <button class="demo-btn error" onclick="showErrorToast()">
+                <i class="fas fa-exclamation-circle"></i>
+                Прикажи грешку
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function showSuccessToast() {
+            showToast(
+                'success',
+                'Порука успешно послата!',
+                'Хвала вам! Ваша порука је примљена. Одговорићемо вам у најкраћем могућем року.',
+                'У реду'
+            );
+        }
+
+        function showErrorToast() {
+            showToast(
+                'error',
+                'Грешка при слању',
+                'Дошло је до проблема при слању поруке. Молимо покушајте поново или нас контактирајте директно.',
+                'Покушај поново'
+            );
+        }
+
+        function showToast(type, title, message, actionText = null) {
+            const existingToast = document.querySelector('.toast-notification');
+            if (existingToast) {
+                existingToast.remove();
+            }
+
+            const icon = type === 'success' 
+                ? '<i class="fas fa-check-circle"></i>' 
+                : '<i class="fas fa-exclamation-circle"></i>';
+
+            const toast = document.createElement('div');
+            toast.className = `toast-notification ${type}`;
+            toast.innerHTML = `
+                <div class="toast-header">
+                    <div class="toast-icon">${icon}</div>
+                    <div class="toast-content">
+                        <div class="toast-title">${title}</div>
+                        <div class="toast-message">${message}</div>
+                    </div>
+                    <button class="toast-close" onclick="this.closest('.toast-notification').classList.add('hide')">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="toast-progress">
+                    <div class="toast-progress-bar"></div>
+                </div>
+                ${actionText ? `
+                <div class="toast-action">
+                    <button class="toast-action-btn" onclick="window.location.href='#kontakt'; this.closest('.toast-notification').classList.add('hide')">
+                        ${actionText}
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+                ` : ''}
+            `;
+
+            document.body.appendChild(toast);
+
+            setTimeout(() => {
+                toast.classList.add('show');
+            }, 100);
+
+            playNotificationSound(type);
+
+            setTimeout(() => {
+                toast.classList.add('hide');
+                setTimeout(() => toast.remove(), 500);
+            }, 5000);
+        }
+
+        function playNotificationSound(type) {
+            try {
+                const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                const oscillator = audioContext.createOscillator();
+                const gainNode = audioContext.createGain();
+                
+                oscillator.connect(gainNode);
+                gainNode.connect(audioContext.destination);
+                
+                if (type === 'success') {
+                    oscillator.frequency.value = 523.25;
+                    gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
+                    gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.15);
+                    oscillator.start(audioContext.currentTime);
+                    oscillator.stop(audioContext.currentTime + 0.15);
+                    
+                    setTimeout(() => {
+                        const osc2 = audioContext.createOscillator();
+                        const gain2 = audioContext.createGain();
+                        osc2.connect(gain2);
+                        gain2.connect(audioContext.destination);
+                        osc2.frequency.value = 659.25;
+                        gain2.gain.setValueAtTime(0.1, audioContext.currentTime);
+                        gain2.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.2);
+                        osc2.start(audioContext.currentTime);
+                        osc2.stop(audioContext.currentTime + 0.2);
+                    }, 80);
+                } else {
+                    oscillator.frequency.value = 329.63;
+                    gainNode.gain.setValueAtTime(0.08, audioContext.currentTime);
+                    gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.25);
+                    oscillator.start(audioContext.currentTime);
+                    oscillator.stop(audioContext.currentTime + 0.25);
+                }
+            } catch (e) {
+                console.log('Audio not supported:', e);
+            }
+        }
+    </script>
+</body>
+</html>

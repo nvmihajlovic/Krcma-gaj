@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Крчма Гај - Најбољи ресторан на Златибору</title>
+    <meta name="description" content="Традиционална јела златиборског краја. Најбоља домаћа храна на Zlatibору са прелепим погледом на Чиготу. Аутентична домаћа кухиња, свеже намирнице, традиционални рецепти.">
+    
+    <!-- Open Graph / Social Media Tags -->
+    <meta property="og:type" content="restaurant">
+    <meta property="og:url" content="https://krcmagaj.rs/">
+    <meta property="og:title" content="Крчма Гај - Традиционална кухиња Златибора">
+    <meta property="og:description" content="Најбоља домаћа храна на Златибору. Аутентична златиборска кухиња са прелепим погледом на Чиготу.">
+    <meta property="og:image" content="https://krcmagaj.rs/images/hero-bg.jpg">
+    <meta property="og:locale" content="sr_RS">
+    <meta property="og:locale:alternate" content="en_US">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Крчма Гај - Традиционална кухиња Златибора">
+    <meta name="twitter:description" content="Најбоља домаћа храна на Златибору. Аутентична златиборска кухиња са прелепим погледом на Чиготу.">
+    <meta name="twitter:image" content="https://krcmagaj.rs/images/hero-bg.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#d97706">
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" as="style">
+    <link rel="preload" href="images/hero-bg.jpg" as="image">
+    
+    <link rel="stylesheet" href="style.css?v=36">
+    <link rel="stylesheet" href="enhancements.css?v=3">
+    <link rel="stylesheet" href="toast-notifications.css?v=1">
+    <link rel="stylesheet" href="weather-popup.css?v=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://awards.infcdn.net/2024/badge-circledLeaves27.css" rel="stylesheet"/>
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Крчма Гај",
+      "alternateName": "Krcma Gaj",
+      "image": "https://krcmagaj.rs/images/hero-bg.jpg",
+      "@id": "https://krcmagaj.rs",
+      "url": "https://krcmagaj.rs",
+      "telephone": "+381641234567",
+      "priceRange": "$$",
+      "servesCuisine": ["Serbian", "Balkan", "Traditional"],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Златибор",
+        "addressLocality": "Златибор",
+        "addressRegion": "Златиборски округ",
+        "postalCode": "31315",
+        "addressCountry": "RS"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 43.7297,
+        "longitude": 19.7156
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "09:00",
+          "closes": "23:00"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/krcmagaj.zlatibor",
+        "https://www.instagram.com/krcmagaj/"
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "10000",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "acceptsReservations": "True",
+      "menu": "https://krcmagaj.rs/#meni",
+      "hasMenu": {
+        "@type": "Menu",
+        "name": "Мени",
+        "description": "Традиционална српска кухиња - јела, пића, десерти"
+      }
+    }
+    </script>
+    
+    <script>
+        // Apply saved theme immediately before page renders
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            console.log('[INLINE SCRIPT] Saved theme from localStorage:', savedTheme);
+            if (savedTheme === 'winter') {
+                console.log('[INLINE SCRIPT] Applying winter-theme class');
+                document.documentElement.classList.add('winter-theme');
+                // Also add to body when it's ready
+                if (document.body) {
+                    document.body.classList.add('winter-theme');
+                } else {
+                    document.addEventListener('DOMContentLoaded', function() {
+                        document.body.classList.add('winter-theme');
+                        console.log('[INLINE SCRIPT] Added winter-theme to body via DOMContentLoaded');
+                    });
+                }
+            }
+        })();
+    </script>
+</head>
+<body>
+    <!-- Skip to Content Link for Screen Readers -->
+    <a href="#main-content" class="skip-to-content">Пређи на главни садржај</a>
+    
+    <!-- Floating Contact Button (shows only in hero) -->
+    <button class="floating-contact" id="floating-contact" title="" data-i18n-tooltip="floating.tooltip" aria-label="Контактирајте нас">
+        <i class="fas fa-envelope" aria-hidden="true"></i>
+        <span data-i18n="floating.writeus">Пишите нам</span>
+    </button>
+    
+    <!-- Back to Top Button (shows when out of hero) -->
+    <button class="back-to-top" id="back-to-top" aria-label="Врати се на врх">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </button>
+
+    <!-- Restaurant Guru Popup -->
+    <div class="guru-popup" id="guru-popup">
+        <div class="guru-popup-content">
+            <button class="guru-popup-close" id="guru-popup-close">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="guru-popup-icon">
+                <i class="fas fa-award"></i>
+            </div>
+            <h3 data-i18n="guru.title">Препоручује Restaurant Guru</h3>
+            <p data-i18n="guru.text">Поносни смо што смо на листи препорука Restaurant Guru-а за 2025. годину!</p>
+            <a href="https://restaurantguru.com/Krcma-Gaj-Zlatibor" target="_blank" class="guru-popup-link">
+                <span data-i18n="guru.link">Погледајте нашу страницу</span>
+                <i class="fas fa-external-link-alt"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- Reservation Modal -->
+    <div class="reservation-modal" id="reservation-modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-header">
+                <i class="fas fa-calendar-alt"></i>
+                <h2>Резервишите сто</h2>
+                <p>Резервишите ваш сто и уживајте у традиционалној атмосфери</p>
+            </div>
+            <form class="reservation-form" id="reservation-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="res-name">Име и презиме</label>
+                        <input type="text" id="res-name" name="res-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="res-phone">Телефон</label>
+                        <input type="tel" id="res-phone" name="res-phone" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="res-date">Датум</label>
+                        <input type="date" id="res-date" name="res-date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="res-time">Време</label>
+                        <input type="time" id="res-time" name="res-time" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="res-guests">Број особа</label>
+                        <select id="res-guests" name="res-guests" required>
+                            <option value="">Изаберите...</option>
+                            <option value="1">1 особа</option>
+                            <option value="2">2 особе</option>
+                            <option value="3">3 особе</option>
+                            <option value="4">4 особе</option>
+                            <option value="5">5 особа</option>
+                            <option value="6">6 особа</option>
+                            <option value="7">7 особа</option>
+                            <option value="8">8+ особа</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="res-occasion">Прилика</label>
+                        <select id="res-occasion" name="res-occasion">
+                            <option value="">Изаберите...</option>
+                            <option value="birthday">Рођендан</option>
+                            <option value="anniversary">Годишњица</option>
+                            <option value="business">Пословни ручак</option>
+                            <option value="family">Породичниručак</option>
+                            <option value="other">Остало</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="res-note">Напомена (опционо)</label>
+                    <textarea id="res-note" name="res-note" rows="3" placeholder="Посебни захтеви, алергије..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">
+                    <span>Потврди резервацију</span>
+                    <i class="fas fa-check"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Главна навигација">
+        <div class="nav-container">
+            <a href="index.html" class="logo" aria-label="Крчма Гај - Почетна страна">
+                <img src="images/logo.webp" alt="Крчма Гај Logo">
+            </a>
+            
+            <!-- Theme Toggle -->
+            <div class="theme-toggle-wrapper">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Season Theme" title="" data-i18n-tooltip="theme.toggle">
+                    <i class="fas fa-sun summer-icon"></i>
+                    <i class="fas fa-snowflake winter-icon"></i>
+                </button>
+                
+                <!-- Theme Suggestion Popup -->
+                <div class="theme-suggestion" id="theme-suggestion">
+                    <p id="theme-suggestion-text" data-i18n="theme.suggestion">Провери и нашу зимску тему!</p>
+                </div>
+            </div>
+            
+            <!-- Language Toggle -->
+            <button class="language-toggle" id="language-toggle" aria-label="Change Language">
+                <span class="lang-flag sr-flag">🇷🇸</span>
+                <span class="lang-flag en-flag">🇬🇧</span>
+                <span class="lang-text"></span>
+            </button>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#pocetna" class="nav-link active" data-i18n="nav.home">Почетна</a></li>
+                <li><a href="#o-nama" class="nav-link" data-i18n="nav.about">О нама</a></li>
+                <li><a href="#jelovnik" class="nav-link" data-i18n="nav.menu">Јеловник</a></li>
+                <li><a href="#karta-pica" class="nav-link" data-i18n="nav.drinks">Карта пића</a></li>
+                <li><a href="#galerija" class="nav-link" data-i18n="nav.gallery">Галерија</a></li>
+                <li><a href="#kontakt" class="nav-link" data-i18n="nav.contact">Контакт</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="tel:+381313841962" class="btn-call" aria-label="Позовите нас">
+                    <i class="fas fa-phone" aria-hidden="true"></i>
+                    <span data-i18n="nav.call">031 3841962</span>
+                </a>
+                <button class="hamburger" id="hamburger" aria-label="Отвори мени" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="pocetna" aria-label="Добродошлица">
+        <div class="hero-background" role="img" aria-label="Позадинска слика ресторана">
+            <div class="hero-overlay"></div>
+            <div class="particles" id="particles" aria-hidden="true"></div>
+        </div>
+        <div class="hero-content" id="main-content">
+            <div class="hero-badge">
+                <i class="fas fa-award"></i>
+                <span data-i18n="hero.badge">Најбољи ресторан на Златибору</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="hero-title-small" data-i18n="hero.welcome">Добродошли у</span>
+                <span class="typing-text" data-text="Крчму Гај" data-i18n-text="hero.name"></span>
+            </h1>
+            <p class="hero-subtitle" data-i18n="hero.subtitle">Традиционална јела златиборског краја<br>припремљена по рецептима наших бака</p>
+            <div class="hero-buttons">
+                <a href="#jelovnik" class="btn btn-primary">
+                    <span data-i18n="hero.menu">Погледајте јеловник</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#kontakt" class="btn btn-secondary">
+                    <span data-i18n="hero.contact">Контактирајте нас</span>
+                    <i class="fas fa-phone"></i>
+                </a>
+            </div>
+            <div class="hero-features">
+                <div class="hero-feature">
+                    <i class="fas fa-utensils"></i>
+                    <span data-i18n="hero.feature1">Домаћа храна</span>
+                </div>
+                <div class="hero-feature">
+                    <i class="fas fa-mountain"></i>
+                    <span data-i18n="hero.feature2">Поглед на Čigotu</span>
+                </div>
+                <div class="hero-feature">
+                    <i class="fas fa-parking"></i>
+                    <span data-i18n="hero.feature3">Бесплатан паркинг</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span data-i18n="hero.scroll">Скролујте доле</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="o-nama">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge" data-i18n="about.badge">О нама</span>
+                <h2 class="section-title" data-i18n="about.title">Добродошли у Крчму Гај</h2>
+                <p class="section-subtitle" data-i18n="about.subtitle">Ваш омиљени етно ресторан на Златибору</p>
+            </div>
+            
+            <!-- Hero Image -->
+            <div class="about-hero">
+                <div class="about-hero-img">
+                    <img src="images/pogled na gajeve.jpg" alt="Крчма Гај - Поглед на Гајеве">
+                    <div class="about-hero-overlay">
+                        <div class="about-hero-badge">
+                            <i class="fas fa-award"></i>
+                            <div class="badge-text">
+                                <strong data-i18n="about.award.best">Најбољи</strong>
+                                <span data-i18n="about.award.year">Ресторан 2024</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="about-content">
+                <!-- Feature Cards -->
+                <div class="about-features">
+                    <div class="about-feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3 data-i18n="about.feature1.title">Традиција и аутентичност</h3>
+                            <p data-i18n="about.feature1.text">Уживајте у аутентичном укусу домаћих јела припремљених на традиционалан начин, док истовремено уживате у прелепом погледу на Чиготу. Сместили смо се у мирном и шармантном насељу Гајеви, само десет минута вожње од центра Златибора.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="about-feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3 data-i18n="about.feature2.title">Укусна и здрава храна</h3>
+                            <p data-i18n="about.feature2.text">Уживајте у нашим јелима која су припремљена по традиционалним рецептима, наслеђеним од наших бака. Сви састојци су пажљиво одабрани, већином пореклом са Златибора, где се узгајају на природан начин.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Image Grid -->
+                <div class="about-image-showcase">
+                    <div class="showcase-img showcase-img-main">
+                        <img src="images/hrana i cigota.jpg" alt="Крчма Гај - Храна и поглед на Чиготу">
+                        <div class="img-label">
+                            <i class="fas fa-mountain"></i>
+                            <span data-i18n="about.img.label">Чигота и наши специјалитети</span>
+                        </div>
+                    </div>
+                    
+                    <div class="showcase-stats">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="stat-data">
+                                <div class="stat-number" data-target="15">0</div>
+                                <div class="stat-label" data-i18n="stats.years">Година<br>искуства</div>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <div class="stat-data">
+                                <div class="stat-number" data-target="50">0</div>
+                                <div class="stat-label" data-i18n="stats.dishes">Јела на<br>менију</div>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card stat-card-highlight">
+                            <div class="stat-icon">
+                                <i class="fas fa-smile"></i>
+                            </div>
+                            <div class="stat-data">
+                                <div class="stat-number" data-target="10000"><span class="number-value">0</span><span class="plus-sign">+</span></div>
+                                <div class="stat-label" data-i18n="stats.guests">Задовољних<br>гостију</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu" id="jelovnik">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge" data-i18n="menu.badge">Јеловник</span>
+                <h2 class="section-title" data-i18n="menu.title">Избор из нашег јеловника</h2>
+                <p class="section-subtitle" data-i18n="menu.subtitle">Традиционална јела припремљена са љубављу</p>
+            </div>
+
+            <div class="menu-filters">
+                <button class="filter-btn active" data-filter="all">
+                    <i class="fas fa-utensils"></i>
+                    <span data-i18n="menu.all">Све категорије</span>
+                </button>
+                <button class="filter-btn" data-filter="hladno">
+                    <i class="fas fa-cheese"></i>
+                    <span data-i18n="menu.appetizers">Хладна предјела</span>
+                </button>
+                <button class="filter-btn" data-filter="mlecni">
+                    <i class="fas fa-glass-whiskey"></i>
+                    <span data-i18n="menu.dairy">Млечни производи</span>
+                </button>
+                <button class="filter-btn" data-filter="salate">
+                    <i class="fas fa-leaf"></i>
+                    <span data-i18n="menu.salads">Салате</span>
+                </button>
+                <button class="filter-btn" data-filter="domaca">
+                    <i class="fas fa-bread-slice"></i>
+                    <span data-i18n="menu.main">Домаћа јела</span>
+                </button>
+                <button class="filter-btn" data-filter="heljda">
+                    <i class="fas fa-mortar-pestle"></i>
+                    <span data-i18n="menu.buckwheat">Јела од хељде</span>
+                </button>
+                <button class="filter-btn" data-filter="poslastice">
+                    <i class="fas fa-birthday-cake"></i>
+                    <span data-i18n="menu.desserts">Посластице</span>
+                </button>
+            </div>
+
+            <div class="menu-grid">
+                <!-- Hladna predjela -->
+                <div class="menu-item" data-category="hladno">
+                    <div class="menu-item-number">01</div>
+                    <div class="menu-item-tag popular" data-i18n="menu.tag.popular">Популарно</div>
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title" data-i18n="menu.item1.name">Чобанска закуска</h3>
+                        <p class="menu-item-description" data-i18n="menu.item1.desc">За две особе</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-category" data-i18n="menu.category.appetizers">Хладна предјела</span>
+                            <span class="menu-item-price">2200 РСД</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="hladno">
+                    <div class="menu-item-number">02</div>
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title" data-i18n="menu.item2.name">Пршута говеђа</h3>
+                        <p class="menu-item-description" data-i18n="menu.item2.desc">100 гр</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-category" data-i18n="menu.category.appetizers">Хладна предјела</span>
+                            <span class="menu-item-price">750 РСД</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="hladno">
+                    <div class="menu-item-number">03</div>
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title" data-i18n="menu.item3.name">Суџук - златиборска кобасица</h3>
+                        <p class="menu-item-description" data-i18n="menu.item3.desc">100 гр</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-category" data-i18n="menu.category.appetizers">Хладна предјела</span>
+                            <span class="menu-item-price">600 РСД</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mlecni proizvodi -->
+                <div class="menu-item" data-category="mlecni">
+                    <div class="menu-item-number">04</div>
+                    <div class="menu-item-tag special" data-i18n="menu.tag.specialty">Специјалитет</div>
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title" data-i18n="menu.item4.name">Домаће кисело млеко</h3>
+                        <p class="menu-item-description" data-i18n="menu.item4.desc">0.25 л • Органско</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-category" data-i18n="menu.category.dairy">Млечни производи</span>
+                            <span class="menu-item-price">330 РСД</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="mlecni">
+                    <div class="menu-item-number">05</div>
+                    <div class="menu-item-tag special" data-i18n="menu.tag.specialty">Специјалитет</div>
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title" data-i18n="menu.item5.name">Злаборски кајмак</h3>
+                        <p class="menu-item-description" data-i18n="menu.item5.desc">100 гр</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-category" data-i18n="menu.category.dairy">Млечни производи</span>
+                            <span class="menu-item-price">600 РСД</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="mlecni">
+                    <div class="menu-item-number">06</div>
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title" data-i18n="menu.item6.name">Злаборски сир</h3>
+                        <p class="menu-item-description" data-i18n="menu.item6.desc">200 гр</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-category" data-i18n="menu.category.dairy">Млечни производи</span>
+                            <span class="menu-item-price">500 РСД</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Salate -->
+                <div class="menu-item" data-category="salate">
+                    <div class="menu-item-number">07</div>
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title" data-i18n="menu.item7.name">Шопска салата</h3>
+                        <p class="menu-item-description" data-i18n="menu.item7.desc">Порција • Свеже поврће</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-category" data-i18n="menu.category.salads">Салате</span>
+                            <span class="menu-item-price">450 РСД</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="salate">
+                    <div class="menu-item-number">08</div>
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title" data-i18n="menu.item8.name">Сезонска салата</h3>
+                        <p class="menu-item-description" data-i18n="menu.item8.desc">Порција • Органско</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-category" data-i18n="menu.category.salads">Салате</span>
+                            <span class="menu-item-price">400 РСД</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Domaca jela -->
+                <div class="menu-item" data-category="domaca">
+                    <div class="menu-item-number">09</div>
+                    <div class="menu-item-tag popular" data-i18n="menu.tag.popular">Популарно</div>
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title" data-i18n="menu.item9.name">Комплет лепиња</h3>
+                        <p class="menu-item-description" data-i18n="menu.item9.desc">Комад</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-category" data-i18n="menu.category.traditional">Домаћа јела</span>
+                            <span class="menu-item-price">600 РСД</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="domaca">
+                    <div class="menu-item-number">10</div>
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title" data-i18n="menu.item10.name">Попара са сиром и кајмаком</h3>
+                        <p class="menu-item-description" data-i18n="menu.item10.desc">Порција</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-category" data-i18n="menu.category.traditional">Домаћа јела</span>
+                            <span class="menu-item-price">500 РСД</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="domaca">
+                    <div class="menu-item-number">11</div>
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title" data-i18n="menu.item11.name">Пита зељаница</h3>
+                        <p class="menu-item-description" data-i18n="menu.item11.desc">250 гр</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-category" data-i18n="menu.category.traditional">Домаћа јела</span>
+                            <span class="menu-item-price">600 РСД</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Jela od heljde -->
+                <div class="menu-item" data-category="heljda">
+                    <div class="menu-item-number">12</div>
+                    <div class="menu-item-tag special" data-i18n="menu.tag.specialty">Специјалитет</div>
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title" data-i18n="menu.item12.name">Качамак са кајмаком</h3>
+                        <p class="menu-item-description" data-i18n="menu.item12.desc">Порција • Препоручујемо</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-category" data-i18n="menu.category.buckwheat">Јела од хељде</span>
+                            <span class="menu-item-price">580 РСД</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="heljda">
+                    <div class="menu-item-number">13</div>
+                    <div class="menu-item-tag popular" data-i18n="menu.tag.popular">Популарно</div>
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title" data-i18n="menu.item13.name">Уштипци са сиром и кајмаком</h3>
+                        <p class="menu-item-description" data-i18n="menu.item13.desc">Порција</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-category" data-i18n="menu.category.buckwheat">Јела од хељде</span>
+                            <span class="menu-item-price">700 РСД</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="heljda">
+                    <div class="menu-item-number">14</div>
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title" data-i18n="menu.item14.name">Пита од хељде</h3>
+                        <p class="menu-item-description" data-i18n="menu.item14.desc">Порција</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-category" data-i18n="menu.category.buckwheat">Јела од хељде</span>
+                            <span class="menu-item-price">700 РСД</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Poslastice -->
+                <div class="menu-item" data-category="poslastice">
+                    <div class="menu-item-number">15</div>
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title" data-i18n="menu.item15.name">Пита са аронијом</h3>
+                        <p class="menu-item-description" data-i18n="menu.item15.desc">Порција</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-category" data-i18n="menu.category.desserts">Посластице</span>
+                            <span class="menu-item-price">520 РСД</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="poslastice">
+                    <div class="menu-item-number">16</div>
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title" data-i18n="menu.item16.name">Пита са јабукама</h3>
+                        <p class="menu-item-description" data-i18n="menu.item16.desc">Порција</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-category" data-i18n="menu.category.desserts">Посластице</span>
+                            <span class="menu-item-price">520 РСД</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="poslastice">
+                    <div class="menu-item-number">17</div>
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title" data-i18n="menu.item17.name">Ораснице</h3>
+                        <p class="menu-item-description" data-i18n="menu.item17.desc">Порција</p>
+                        <div class="menu-item-footer">
+                            <span class="menu-item-category" data-i18n="menu.category.desserts">Посластице</span>
+                            <span class="menu-item-price">550 РСД</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Drinks Section -->
+    <section class="drinks" id="karta-pica">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge" data-i18n="drinks.badge">Карта пића</span>
+                <h2 class="section-title" data-i18n="drinks.title">Избор из наше карте пића</h2>
+                <p class="section-subtitle" data-i18n="drinks.subtitle">Вина, ракије и освежавајућа пића</p>
+            </div>
+
+            <div class="menu-filters">
+                <button class="drinks-filter-btn active" data-filter="all">
+                    <i class="fas fa-glass-cheers"></i>
+                    <span data-i18n="drinks.all">Све пића</span>
+                </button>
+                <button class="drinks-filter-btn" data-filter="vina-piva">
+                    <i class="fas fa-wine-bottle"></i>
+                    <span data-i18n="drinks.wine.beer">Вина и пива</span>
+                </button>
+                <button class="drinks-filter-btn" data-filter="zestoka">
+                    <i class="fas fa-wine-glass-alt"></i>
+                    <span data-i18n="drinks.strong">Жестока пића</span>
+                </button>
+                <button class="drinks-filter-btn" data-filter="ostali">
+                    <i class="fas fa-mug-hot"></i>
+                    <span data-i18n="drinks.other">Остали напици</span>
+                </button>
+                <button class="drinks-filter-btn" data-filter="bezalkoholna">
+                    <i class="fas fa-glass-water"></i>
+                    <span data-i18n="drinks.soft">Безалкохолна</span>
+                </button>
+            </div>
+
+            <div class="drinks-grid">
+                <div class="drinks-category" data-category="vina-piva">
+                    <div class="category-number">01</div>
+                    <div class="category-header">
+                        <h3 class="category-title" data-i18n="drinks.category.wine.beer">Вина и пива</h3>
+                    </div>
+                    <div class="drinks-list">
+                        <div class="drink-item">
+                            <div class="drink-info">
+                                <span class="drink-name" data-i18n="drinks.item1.name">Вино бело / црвено</span>
+                                <span class="drink-size">1 л</span>
+                            </div>
+                            <span class="drink-price">1700 РСД</span>
+                        </div>
+                        <div class="drink-item">
+                            <div class="drink-info">
+                                <span class="drink-name" data-i18n="drinks.item2.name">Вино бело / црно (чаша)</span>
+                                <span class="drink-size">0.20 л</span>
+                            </div>
+                            <span class="drink-price">350 РСД</span>
+                        </div>
+                        <div class="drink-item">
+                            <div class="drink-info">
+                                <span class="drink-name">Зајечарско пиво</span>
+                                <span class="drink-size">0.50 л</span>
+                            </div>
+                            <span class="drink-price">350 РСД</span>
+                        </div>
+                        <div class="drink-item">
+                            <div class="drink-info">
+                                <span class="drink-name" data-i18n="drinks.item4.name">Хајнекен пиво</span>
+                                <span class="drink-size">0.25 л</span>
+                            </div>
+                            <span class="drink-price">430 РСД</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="drinks-category" data-category="zestoka">
+                    <div class="category-number">02</div>
+                    <div class="category-header">
+                        <h3 class="category-title" data-i18n="drinks.category.strong">Жестока пића</h3>
+                    </div>
+                    <div class="drinks-list">
+                        <div class="drink-item">
+                            <div class="drink-info">
+                                <span class="drink-name" data-i18n="drinks.item5.name">Вињак</span>
+                                <span class="drink-size">0.03 л</span>
+                            </div>
+                            <span class="drink-price">220 РСД</span>
+                        </div>
+                        <div class="drink-item">
+                            <div class="drink-info">
+                                <span class="drink-name" data-i18n="drinks.item6.name">Лоза "13.јули"</span>
+                                <span class="drink-size">0.03 л</span>
+                            </div>
+                            <span class="drink-price">270 РСД</span>
+                        </div>
+                        <div class="drink-item">
+                            <div class="drink-info">
+                                <span class="drink-name">Вилјамовка</span>
+                                <span class="drink-size">0.03 л</span>
+                            </div>
+                            <span class="drink-price">290 РСД</span>
+                        </div>
+                        <div class="drink-item">
+                            <div class="drink-info">
+                                <span class="drink-name" data-i18n="drinks.item8.name">Ракија са малином</span>
+                                <span class="drink-size">0.03 л</span>
+                            </div>
+                            <span class="drink-price">280 РСД</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="drinks-category" data-category="ostali">
+                    <div class="category-number">03</div>
+                    <div class="category-header">
+                        <h3 class="category-title" data-i18n="drinks.category.other">Остали напици</h3>
+                    </div>
+                    <div class="drinks-list">
+                        <div class="drink-item">
+                            <div class="drink-info">
+                                <span class="drink-name" data-i18n="drinks.item9.name">Кафа</span>
+                                <span class="drink-size">Порција</span>
+                            </div>
+                            <span class="drink-price">200 РСД</span>
+                        </div>
+                        <div class="drink-item">
+                            <div class="drink-info">
+                                <span class="drink-name" data-i18n="drinks.item10.name">Чај са медом</span>
+                                <span class="drink-size">Порција</span>
+                            </div>
+                            <span class="drink-price">190 РСД</span>
+                        </div>
+                        <div class="drink-item">
+                            <div class="drink-info">
+                                <span class="drink-name" data-i18n="drinks.item11.name">Кувана ракија</span>
+                                <span class="drink-size">0.20 л</span>
+                            </div>
+                            <span class="drink-price">350 РСД</span>
+                        </div>
+                        <div class="drink-item">
+                            <div class="drink-info">
+                                <span class="drink-name" data-i18n="drinks.item12.name">Кувано вино</span>
+                                <span class="drink-size">0.20 л</span>
+                            </div>
+                            <span class="drink-price">380 РСД</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="drinks-category" data-category="bezalkoholna">
+                    <div class="category-number">04</div>
+                    <div class="category-header">
+                        <h3 class="category-title" data-i18n="drinks.category.soft">Безалкохолна пића</h3>
+                    </div>
+                    <div class="drinks-list">
+                        <div class="drink-item">
+                            <div class="drink-info">
+                                <span class="drink-name" data-i18n="drinks.item13.name">Домаћи воћни сок</span>
+                                <span class="drink-size">0.20 л</span>
+                            </div>
+                            <span class="drink-price">300 РСД</span>
+                        </div>
+                        <div class="drink-item">
+                            <div class="drink-info">
+                                <span class="drink-name" data-i18n="drinks.item14.name">Кока кола, Спрајт, Фанта</span>
+                                <span class="drink-size">0.25 л</span>
+                            </div>
+                            <span class="drink-price">320 РСД</span>
+                        </div>
+                        <div class="drink-item">
+                            <div class="drink-info">
+                                <span class="drink-name" data-i18n="drinks.item15.name">Лимунада</span>
+                                <span class="drink-size">0.30 л</span>
+                            </div>
+                            <span class="drink-price">350 РСД</span>
+                        </div>
+                        <div class="drink-item">
+                            <div class="drink-info">
+                                <span class="drink-name" data-i18n="drinks.item16.name">Минерална вода "Књаз Милош"</span>
+                                <span class="drink-size">0.75 л</span>
+                            </div>
+                            <span class="drink-price">420 РСД</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-download">
+                <a href="https://krcmagajzlatibor.rs/cenovnici/Cenovnik_2024.pdf" target="_blank" class="btn btn-outline">
+                    <i class="fas fa-download"></i>
+                    <span data-i18n="drinks.download">Преузмите карту јела и пића</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="galerija">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge" data-i18n="gallery.badge">Галерија</span>
+                <h2 class="section-title" data-i18n="gallery.title">Погледајте наш ресторан</h2>
+                <p class="section-subtitle" data-i18n="gallery.subtitle">Традиционални амбијент и укусна храна</p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/jelo-specijalitet.jpg" alt="Специјалитет куће - традиционално јело" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus" aria-hidden="true"></i>
+                        <span class="gallery-label">Специјалитет куће</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/pogled na cigotu.jpg" alt="Поглед на Чиготу" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus" aria-hidden="true"></i>
+                        <span class="gallery-label">Поглед на Чиготу</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/komplet lepinja.jpg" alt="Комплет лепиња" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus" aria-hidden="true"></i>
+                        <span class="gallery-label">Комплет лепиња</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/staza.jpg" alt="Стаза до ресторана" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus" aria-hidden="true"></i>
+                        <span class="gallery-label">Стаза до ресторана</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/hrana i cigota.jpg" alt="Храна са погледом на Чиготу" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus" aria-hidden="true"></i>
+                        <span class="gallery-label">Храна и Чигота</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/terasa cveće.jpg" alt="Тераса са цвећем" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus" aria-hidden="true"></i>
+                        <span class="gallery-label">Тераса са цвећем</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/sopska salata.jpg" alt="Шопска салата" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus" aria-hidden="true"></i>
+                        <span class="gallery-label">Шопска салата</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/slika sa terase.jpg" alt="Поглед са терасе ресторана" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus" aria-hidden="true"></i>
+                        <span class="gallery-label">Са терасе</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/ustipci za dzemom.jpg" alt="Уштипци са џемом" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus" aria-hidden="true"></i>
+                        <span class="gallery-label">Уштипци са џемом</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/krcma i sneg.jpg" alt="Крчма Гај зими" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus" aria-hidden="true"></i>
+                        <span class="gallery-label">Крчма зими</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/Kiselo mleko.jpg" alt="Кисело млеко" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus" aria-hidden="true"></i>
+                        <span class="gallery-label">Кисело млеко</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/devojcica u pesku.jpg" alt="Игралиште за децу" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus" aria-hidden="true"></i>
+                        <span class="gallery-label">Игралиште</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/stolica za ljuljanje.jpg" alt="Столица за љуљање" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus" aria-hidden="true"></i>
+                        <span class="gallery-label">Релаксација</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/pita od aronije.jpg" alt="Пита од ароније - домаћи десерт" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus" aria-hidden="true"></i>
+                        <span class="gallery-label">Пита од ароније</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/pogled na čigotu i terasu.jpg" alt="Поглед на Чиготу и терасу" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus" aria-hidden="true"></i>
+                        <span class="gallery-label">Чигота и тераса</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-parking"></i>
+                    </div>
+                    <h3 data-i18n="features.parking.title">Бесплатан паркинг</h3>
+                    <p data-i18n="features.parking.desc">За ваш угодан боравак обезбедили смо вам потпуно бесплатан паркинг (ограничен капацитет)</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-child"></i>
+                    </div>
+                    <h3 data-i18n="features.playground.title">Игралиште за најмлађе</h3>
+                    <p data-i18n="features.playground.desc">Уживајте у свом оброку или пићу, док ваши најмлађи уживају у безбрижној игри</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <h3 data-i18n="features.view.title">Предиван поглед</h3>
+                    <p data-i18n="features.view.desc">Уживајте у природи и у свежем ваздуху. Предиван поглед на Чиготу и околну природу</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-dog"></i>
+                    </div>
+                    <h3 data-i18n="features.petfriendly.title">Pet friendly</h3>
+                    <p data-i18n="features.petfriendly.desc">Ми волимо животиње. Слободно са собом поведите и свог кућног љубимца</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge" data-i18n="reviews.badge">Рецензије</span>
+                <h2 class="section-title" data-i18n="reviews.title">Шта кажу наши гости</h2>
+                <p class="section-subtitle" data-i18n="reviews.subtitle">Задовољство наших гостију је наш највећи успех</p>
+            </div>
+
+            <div class="testimonials-slider">
+                <button class="slider-btn slider-prev">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                
+                <div class="testimonials-wrapper">
+                    <!-- Reviews will be loaded dynamically from Google -->
+                </div>
+
+                <button class="slider-btn slider-next">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+
+            <div class="slider-dots">
+                <!-- Dots will be generated dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="kontakt">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <div class="section-header">
+                        <span class="section-badge" data-i18n="contact.badge">Контакт</span>
+                        <h2 class="section-title" data-i18n="contact.title">Контактирајте нас</h2>
+                        <p class="section-subtitle" data-i18n="contact.subtitle">Пишите нам и одговорићемо вам у најкраћем могућем року</p>
+                    </div>
+
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4 data-i18n="contact.address">Адреса</h4>
+                                <p>Гајеви, Златибор<br>Србија</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4 data-i18n="contact.phone">Телефон</h4>
+                                <p><a href="tel:+381313841962">+381 31 3841962</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4 data-i18n="contact.hours">Радно време</h4>
+                                <p data-i18n="contact.hours.value">Сваког дана<br>09:00 - 22:00</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-share-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4 data-i18n="contact.follow">Пратите нас</h4>
+                                <div class="social-links">
+                                    <a href="https://www.facebook.com/krcmagaj.zlatibor" target="_blank" aria-label="Facebook">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                    <a href="https://www.instagram.com/krcmagaj/" target="_blank" aria-label="Instagram">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contact-form" action="https://formsubmit.co/nvmihajlovic@gmail.com" method="POST">
+                        <!-- FormSubmit Configuration -->
+                        <input type="hidden" name="_subject" value="Nova poruka sa sajta Krčma Gaj">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_next" value="#message-sent">
+                        <input type="hidden" name="_error" value="#message-error">
+                        
+                        <div class="form-group">
+                            <label for="name" data-i18n="contact.form.name">Име и презиме <span class="required">*</span></label>
+                            <input type="text" id="name" name="name" required aria-required="true" minlength="2" maxlength="100">
+                            <span class="form-error" id="name-error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" data-i18n="contact.form.email">Е-mail адреса <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required aria-required="true" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                            <span class="form-error" id="email-error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject" data-i18n="contact.form.subject">Како сте чули за нас?</label>
+                            <select id="subject" name="subject">
+                                <option value="" data-i18n="contact.form.select">Изаберите...</option>
+                                <option value="google" data-i18n="contact.form.option.google">Google претрага</option>
+                                <option value="facebook">Facebook</option>
+                                <option value="instagram">Instagram</option>
+                                <option value="препорука" data-i18n="contact.form.option.recommendation">Препорука</option>
+                                <option value="друго" data-i18n="contact.form.option.other">Друго</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" data-i18n="contact.form.message">Ваша порука <span class="required">*</span></label>
+                            <textarea id="message" name="message" rows="5" required aria-required="true" minlength="10" maxlength="1000"></textarea>
+                            <span class="form-error" id="message-error"></span>
+                        </div>
+                        <div class="form-status" id="form-status" role="alert" aria-live="polite"></div>
+                        <button type="submit" class="btn btn-primary" id="submit-btn">
+                            <span data-i18n="contact.form.submit">Пошаљите</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="map-wrapper">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2906.8799476476234!2d19.69945931550641!3d43.27472837913785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4759d4a9b9999999%3A0x9999999999999999!2sGajevi%2C%20Zlatibor!5e0!3m2!1sen!2srs!4v1234567890123!5m2!1sen!2srs" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <a href="https://www.google.com/maps/dir//Гајеви,+Златибор" target="_blank" class="directions-btn">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <span data-i18n="contact.directions">Како до нас</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Brand Column -->
+                <div class="footer-column footer-brand">
+                    <div class="footer-logo">
+                        <img src="images/logo.webp" alt="Крчма Гај" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <span class="logo-text" style="display: none;">Крчма Гај</span>
+                    </div>
+                    <p class="footer-description" data-i18n="footer.description">Ваш омиљени етно ресторан на Златибору. Традиционална јела припремљена са љубављу.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/krcmagaj.zlatibor" target="_blank" aria-label="Facebook" class="social-btn">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/krcmagaj/" target="_blank" aria-label="Instagram" class="social-btn">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-column">
+                    <h4 data-i18n="footer.links.title">Брзе везе</h4>
+                    <ul class="footer-links">
+                        <li><a href="#pocetna"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.home">Почетна</span></a></li>
+                        <li><a href="#o-nama"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.about">О нама</span></a></li>
+                        <li><a href="#jelovnik"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.menu">Јеловник</span></a></li>
+                        <li><a href="#karta-pica"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.drinks">Карта пића</span></a></li>
+                        <li><a href="#galerija"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.gallery">Галерија</span></a></li>
+                        <li><a href="#kontakt"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.contact">Контакт</span></a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="footer-column">
+                    <h4 data-i18n="footer.contact.title">Контакт</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <div class="footer-contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="footer-contact-text">
+                                <span>Гајеви, Златибор</span>
+                                <small>Србија</small>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="footer-contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="footer-contact-text">
+                                <a href="tel:+381313841962">+381 31 3841962</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="footer-contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="footer-contact-text">
+                                <span data-i18n="footer.hours">Сваког дана</span>
+                                <strong>09:00 - 22:00</strong>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Restaurant Guru Badge -->
+                <div class="footer-column footer-badge">
+                    <h4 data-i18n="footer.recommendation">Препорука</h4>
+                    <a id="b-circledLeaves27" target="_blank" href="https://restaurantguru.com/Krcma-Gaj-Zlatibor" class="b-circledLeaves27--light b-circledLeaves27--2025">
+                        <span class="b-circledLeaves27__title">Recommended</span>
+                        <span class="b-circledLeaves27__separator"></span>
+                        <span class="b-circledLeaves27__name">Krcma Gaj</span>
+                    </a>
+                    <a href="tel:+381313841962" class="footer-cta-btn">
+                        <i class="fas fa-phone-alt"></i>
+                        <span data-i18n="footer.callus">Позовите нас</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p class="copyright" data-i18n="footer.copyright">&copy; 2025 Крчма Гај. Сва права задржана.</p>
+                    <div class="footer-policies">
+                        <a href="politika-privatnosti.html" class="policy-link" data-i18n="footer.privacy">Политика приватности</a>
+                        <span class="policy-divider">|</span>
+                        <a href="politika-kolacica.html" class="policy-link" data-i18n="footer.cookies">Политика колачића</a>
+                        <span class="policy-divider">|</span>
+                        <a href="uslovi-koriscenja.html" class="policy-link" data-i18n="footer.terms">Услови коришћења</a>
+                    </div>
+                    <div class="footer-credits">
+                        <span class="credits-text" data-i18n="footer.design">Дизајн и израда</span>
+                        <a href="https://www.pansoft.rs" target="_blank" class="pansoft-link">
+                            <img src="images/pansoft logo bela slova-01.png" alt="Pansoft" class="pansoft-logo">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cookie Consent -->
+    <div class="cookie-consent" id="cookieConsent">
+        <div class="cookie-content">
+            <div class="cookie-icon">
+                <i class="fas fa-cookie-bite"></i>
+            </div>
+            <div class="cookie-text">
+                <h4>Колачићи и приватност</h4>
+                <p>Користимо колачиће да бисмо вам пружили најбоље искуство на нашем сајту. Изаберите врсте колачића које желите да дозволите.</p>
+            </div>
+            <div class="cookie-actions">
+                <button class="cookie-btn cookie-settings" id="cookieSettings">
+                    <i class="fas fa-sliders-h"></i>
+                    <span>Подешавања</span>
+                </button>
+                <button class="cookie-btn cookie-accept" id="acceptCookies">
+                    <i class="fas fa-check"></i>
+                    <span>Прихватам све</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cookie Settings Modal -->
+    <div class="cookie-modal" id="cookieModal">
+        <div class="cookie-modal-content">
+            <div class="cookie-modal-header">
+                <h3>Подешавања колачића</h3>
+                <button class="cookie-modal-close" id="closeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="cookie-modal-body">
+                <div class="cookie-option">
+                    <div class="cookie-option-header">
+                        <div class="cookie-option-info">
+                            <h4>Неопходни колачићи</h4>
+                            <p>Ови колачићи су неопходни за основне функције сајта.</p>
+                        </div>
+                        <label class="cookie-switch">
+                            <input type="checkbox" checked disabled>
+                            <span class="cookie-slider"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="cookie-option">
+                    <div class="cookie-option-header">
+                        <div class="cookie-option-info">
+                            <h4>Аналитички колачићи</h4>
+                            <p>Помажу нам да разумемо како посетиоци користе наш сајт.</p>
+                        </div>
+                        <label class="cookie-switch">
+                            <input type="checkbox" id="analyticsCheck" checked>
+                            <span class="cookie-slider"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="cookie-option">
+                    <div class="cookie-option-header">
+                        <div class="cookie-option-info">
+                            <h4>Маркетиншки колачићи</h4>
+                            <p>Користе се за приказивање релевантних реклама.</p>
+                        </div>
+                        <label class="cookie-switch">
+                            <input type="checkbox" id="marketingCheck">
+                            <span class="cookie-slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="cookie-modal-footer">
+                <button class="cookie-btn cookie-decline" id="declineCookies">
+                    <i class="fas fa-times"></i>
+                    <span>Одбиј све</span>
+                </button>
+                <button class="cookie-btn cookie-accept" id="saveCookieSettings">
+                    <i class="fas fa-save"></i>
+                    <span>Сачувај подешавања</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightbox-close">
+            <i class="fas fa-times"></i>
+        </button>
+        <button class="lightbox-prev" id="lightbox-prev">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="lightbox-next" id="lightbox-next">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        <img src="" alt="Gallery Image" id="lightbox-image">
+    </div>
+
+    <script src="translations.js?v=17"></script>
+    <script src="script.js?v=15"></script>
+    <script src="enhancements.js?v=3"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
+</body>
+</html>
