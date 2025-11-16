@@ -2759,7 +2759,7 @@ body.winter-theme .testimonial-card.active {
 }
 
 .contact-info .section-header {
-    text-align: left;
+    text-align: center;
     margin-bottom: 50px;
 }
 
@@ -2895,6 +2895,10 @@ body.winter-theme .social-links a:hover {
         gap: 80px;
     }
     
+    .contact-info .section-header {
+        text-align: left;
+    }
+    
     .contact-details {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -2955,6 +2959,30 @@ body.winter-theme .form-group textarea:focus {
 .form-group textarea {
     resize: vertical;
     min-height: 140px;
+}
+
+/* Стилови за грешке у форми */
+.form-error {
+    display: block;
+    color: #dc2626;
+    font-size: 0.875rem;
+    margin-top: 6px;
+    font-weight: 500;
+    min-height: 20px;
+    transition: opacity 0.3s ease;
+}
+
+.form-group.has-error input,
+.form-group.has-error textarea,
+.form-group.has-error select {
+    border-color: #dc2626;
+    background: #fef2f2;
+}
+
+.form-group.has-error input:focus,
+.form-group.has-error textarea:focus,
+.form-group.has-error select:focus {
+    box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.1);
 }
 
 .contact-form .btn {
@@ -5851,8 +5879,6 @@ body.winter-theme textarea:focus-visible {
     outline-color: #0369a1;
     box-shadow: 0 0 0 4px rgba(3, 105, 161, 0.1);
 }
-    box-shadow: 0 0 0 4px rgba(3, 105, 161, 0.1);
-}
 
 /* ================================
    Responsive Design
@@ -6276,14 +6302,7 @@ body.winter-theme textarea:focus-visible {
     }
     
     .scroll-indicator {
-        bottom: 20px;
-        font-size: 0;
-        gap: 0;
-    }
-    
-    .scroll-indicator i {
-        font-size: 2rem;
-        opacity: 0.7;
+        display: none;
     }
     
     .section-badge {

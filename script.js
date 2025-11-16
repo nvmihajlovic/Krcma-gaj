@@ -1002,18 +1002,74 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Додај визуелни feedback при submit-у
+// Client-side валидација и визуелни feedback при submit-у
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
-        // НЕ позивамо e.preventDefault() - пуштамо FormSubmit да ради
+        // Валидација пре слања
+        const nameInput = document.getElementById('name');
+        const emailInput = document.getElementById('email');
+        const messageInput = document.getElementById('message');
         
-        // Прикажи loading стање на дугмету
+        let isValid = true;
+        
+        // Очисти претходне грешке
+        document.querySelectorAll('.form-error').forEach(error => error.textContent = '');
+        document.querySelectorAll('.form-group').forEach(group => group.classList.remove('has-error'));
+        
+        // Валидација имена (минимум 2 карактера, само слова и размаци)
+        if (nameInput && nameInput.value.trim().length < 2) {
+            document.getElementById('name-error').textContent = 'Име мора имати најмање 2 карактера';
+            nameInput.closest('.form-group').classList.add('has-error');
+            isValid = false;
+        }
+        
+        // Валидација email-а (побољшан regex)
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (emailInput && !emailRegex.test(emailInput.value.trim())) {
+            document.getElementById('email-error').textContent = 'Унесите исправну е-mail адресу';
+            emailInput.closest('.form-group').classList.add('has-error');
+            isValid = false;
+        }
+        
+        // Валидација поруке (минимум 10 карактера)
+        if (messageInput && messageInput.value.trim().length < 10) {
+            document.getElementById('message-error').textContent = 'Порука мора имати најмање 10 карактера';
+            messageInput.closest('.form-group').classList.add('has-error');
+            isValid = false;
+        }
+        
+        // Ако валидација не прође, спречи слање
+        if (!isValid) {
+            e.preventDefault();
+            showToast(
+                'error',
+                'Грешка у форми',
+                'Молимо исправите означена поља и покушајте поново.',
+                'У реду'
+            );
+            return;
+        }
+        
+        // Ако је све ОК, прикажи loading стање и пусти FormSubmit да ради
         const submitBtn = contactForm.querySelector('button[type="submit"]');
         if (submitBtn) {
-            const originalHTML = submitBtn.innerHTML;
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> <span>Шаљем...</span>';
             submitBtn.disabled = true;
             submitBtn.style.opacity = '0.7';
+        }
+        
+        // НЕ позивамо e.preventDefault() - форма се шаље на FormSubmit
+    });
+    
+    // Real-time валидација - уклони грешку када корисник почне куцати
+    ['name', 'email', 'message'].forEach(fieldId => {
+        const field = document.getElementById(fieldId);
+        if (field) {
+            field.addEventListener('input', () => {
+                const errorSpan = document.getElementById(`${fieldId}-error`);
+                if (errorSpan) errorSpan.textContent = '';
+                field.closest('.form-group').classList.remove('has-error');
+            });
         }
     });
 }
