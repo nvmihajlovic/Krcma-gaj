@@ -22,32 +22,37 @@ function createParticles() {
 createParticles();
 
 // ================================
-// Ефекат куцања текста у Hero секцији
+// Ефекат куцања текста у Hero секцији - FIXED MEMORY LEAKS
 // ================================
 const typingText = document.querySelector('.typing-text');
-window.typingInterval = null;
+
+// Глобалне референце за cleanup
+window.typingTimeouts = [];
 window.isTyping = false;
 window.currentTypingElement = null;
+
+// Cleanup функција за брисање свих timeout-ова
+function cleanupTypingTimeouts() {
+    if (window.typingTimeouts && window.typingTimeouts.length > 0) {
+        window.typingTimeouts.forEach(timeout => clearTimeout(timeout));
+        window.typingTimeouts = [];
+    }
+}
 
 window.startTypingEffect = function(element, delay = 1000) {
     if (!element) return;
     
-    // Очисти постојеће интервале и timeout-ове
-    if (window.typingInterval) {
-        clearTimeout(window.typingInterval);
-        window.typingInterval = null;
-    }
+    // КРИТИЧНО: Очисти све претходне timeout-ове
+    cleanupTypingTimeouts();
     
-    // Ресетуј претходно стање куцања текста
+    // Ресетуј стање
     window.isTyping = false;
     
-    // Узми текст који треба да се прикаже
+    // Узми текст
     const text = element.getAttribute('data-text');
-    if (!text) {
-        return;
-    }
+    if (!text) return;
     
-    // Комплетан reset елемента
+    // Reset елемента
     element.innerHTML = '';
     element.textContent = '';
     element.style.borderRight = '3px solid';
@@ -58,32 +63,52 @@ window.startTypingEffect = function(element, delay = 1000) {
     let index = 0;
     
     function typeWriter() {
-        if (!window.isTyping || window.currentTypingElement !== element) {
+        // Провера да ли је елемент још увек валидан
+        if (!window.isTyping || window.currentTypingElement !== element || !element.isConnected) {
+            cleanupTypingTimeouts();
             return;
         }
         
         if (index < text.length) {
-            // Комплетна замена садржаја сваки пут
             element.innerHTML = '';
             element.textContent = text.substring(0, index + 1);
             index++;
-            window.typingInterval = setTimeout(typeWriter, 150);
+            
+            // Чување reference на timeout за cleanup
+            const timeoutId = setTimeout(typeWriter, 150);
+            window.typingTimeouts.push(timeoutId);
         } else {
-            setTimeout(() => {
-                if (element.style) {
+            // Финални timeout за уклањање курсора
+            const finalTimeout = setTimeout(() => {
+                if (element && element.style) {
                     element.style.borderRight = 'none';
                 }
                 window.isTyping = false;
                 window.currentTypingElement = null;
+                cleanupTypingTimeouts();
             }, 500);
+            window.typingTimeouts.push(finalTimeout);
         }
     }
     
-    setTimeout(() => {
+    // Иницијални delay
+    const initTimeout = setTimeout(() => {
         window.isTyping = true;
         typeWriter();
     }, delay);
+    window.typingTimeouts.push(initTimeout);
 }
+
+// Cleanup при напуштању странице
+window.addEventListener('beforeunload', cleanupTypingTimeouts);
+
+// Cleanup при паузи видљивости (нпр. мењање табова)
+document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+        cleanupTypingTimeouts();
+        window.isTyping = false;
+    }
+});
 
 if (typingText) {
     startTypingEffect(typingText, 1000);
