@@ -13,8 +13,9 @@ function createParticles() {
         const particle = document.createElement('div');
         particle.className = 'particle';
         particle.style.left = Math.random() * 100 + '%';
-        particle.style.animationDelay = Math.random() * 15 + 's';
-        particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+        particle.style.top = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 20 + 's';
+        // Ne postavljamo animationDuration da CSS može da kontroliše različite animacije po temi
         particlesContainer.appendChild(particle);
     }
 }
