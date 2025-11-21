@@ -25,10 +25,11 @@
     <meta name="twitter:image" content="https://krcmagaj.rs/images/hero-bg.jpg">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="manifest" href="site.webmanifest">
+    <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="images/favicon/site.webmanifest">
     <meta name="theme-color" content="#d97706">
     <!-- Preload Critical Resources -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" as="style">
@@ -41,7 +42,7 @@
     <link rel="stylesheet" href="enhancements.css?v=3">
     <link rel="stylesheet" href="toast-notifications.css?v=1">
     <link rel="stylesheet" href="weather-popup.css?v=1">
-    <link rel="stylesheet" href="chatbot.css?v=1">
+    <link rel="stylesheet" href="chatbot.css?v=4">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1126,7 +1127,7 @@
                 </div>
 
                 <div class="contact-form-wrapper">
-                    <form class="contact-form" id="contact-form" action="https://formsubmit.co/nvmihajlovic@gmail.com" method="POST">
+                    <form class="contact-form" id="contact-form" action="https://formsubmit.co/nenad@pansoft.rs" method="POST">
                         <!-- FormSubmit Configuration -->
                         <input type="hidden" name="_subject" value="Nova poruka sa sajta Krčma Gaj">
                         <input type="hidden" name="_captcha" value="false">
@@ -1401,7 +1402,7 @@
         <div class="chatbot-notification" id="chatbotNotification">
             <span data-i18n="chatbot.greeting">Хеј! Могу ли да помогнем? 👋</span>
         </div>
-        <button class="chatbot-button" id="chatbotButton" aria-label="Отвори асистента">
+        <button class="chatbot-button" id="chatbotButton" data-i18n-aria="chatbot.button.label" aria-label="Open assistant">
             <i class="fas fa-comments"></i>
             <span class="chatbot-badge">1</span>
         </button>
@@ -1415,22 +1416,30 @@
                         <p data-i18n="chatbot.status">Онлајн • Одговара брзо</p>
                     </div>
                 </div>
-                <button class="chatbot-close" id="chatbotClose" aria-label="Затвори">
+                <button class="chatbot-close" id="chatbotClose" data-i18n-aria="chatbot.close.label" aria-label="Close">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
             
             <div class="chatbot-messages" id="chatMessages">
                 <div class="chatbot-welcome-image">
-                    <img src="images/gallery5.webp" alt="Крчма Гај" onerror="this.style.display='none'">
+                    <img src="images/jelo-specijalitet.jpg" data-i18n-alt="chatbot.welcome.image" alt="Krčma Gaj" onerror="this.style.display='none'">
                 </div>
-                <!-- Поруке се додају динамички преко JavaScript -->
+                <!-- Messages are added dynamically via JavaScript -->
             </div>
             
             <div class="chatbot-quick-actions">
                 <button class="quick-action" data-action="menu">
                     <i class="fas fa-utensils"></i>
                     <span data-i18n="chatbot.action.menu">Мени</span>
+                </button>
+                <button class="quick-action" data-action="location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span data-i18n="chatbot.action.location">Локација</span>
+                </button>
+                <button class="quick-action" data-action="hours">
+                    <i class="fas fa-clock"></i>
+                    <span data-i18n="chatbot.action.hours">Радно време</span>
                 </button>
                 <button class="quick-action" data-action="contact">
                     <i class="fas fa-phone"></i>
@@ -1444,10 +1453,11 @@
                     class="chatbot-input" 
                     id="chatbotInput" 
                     data-i18n-placeholder="chatbot.placeholder"
-                    placeholder="Упишите вашу поруку..."
-                    aria-label="Упишите поруку"
+                    placeholder="Type your message..."
+                    data-i18n-aria="chatbot.input.label"
+                    aria-label="Type message"
                 >
-                <button class="chatbot-send" id="chatbotSend" aria-label="Пошаљи">
+                <button class="chatbot-send" id="chatbotSend" data-i18n-aria="chatbot.send.label" aria-label="Send">
                     <i class="fas fa-paper-plane"></i>
                 </button>
             </div>
@@ -1458,9 +1468,23 @@
         </div>
     </div>
 
-    <script src="translations.js?v=17"></script>
-    <script src="chatbot.js"></script>
-    <script src="script.js?v=15"></script>
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/YOUR_PROPERTY_ID/YOUR_WIDGET_ID';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
+
+    <script src="translations.js?v=21"></script>
+    <script src="chatbot.js?v=6"></script>
+    <script src="script.js?v=18"></script>
     <script src="enhancements.js?v=3"></script>
     <script src="features.js?v=1"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>

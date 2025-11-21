@@ -1,6 +1,12 @@
 /* ================================
    Chatbot Widget
    ================================ */
+
+/* Hide custom chatbot when Tawk.to is active */
+.tawk-active .chatbot-container {
+    display: none !important;
+}
+
 .chatbot-container {
     position: fixed;
     bottom: 30px;
@@ -360,32 +366,36 @@ body.winter-theme .chatbot-messages {
 
 /* Chatbot Quick Actions */
 .chatbot-quick-actions {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
     gap: 8px;
     padding: 15px 20px;
     background: #f8f9fa;
     border-top: 1px solid #e5e7eb;
+    overflow-x: auto;
 }
 
 .quick-action {
-    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 6px;
-    padding: 12px 8px;
+    padding: 12px 6px;
     background: white;
     border: 2px solid #e5e7eb;
     border-radius: 12px;
     cursor: pointer;
     transition: all 0.2s ease;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: 500;
     color: #4b5563;
+    min-width: 70px;
+    text-align: center;
 }
 
 .quick-action i {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     color: var(--primary-color);
     transition: all 0.2s ease;
 }
@@ -409,6 +419,14 @@ body.winter-theme .quick-action:hover {
 
 .quick-action:hover i {
     transform: scale(1.15);
+}
+
+.quick-action span {
+    line-height: 1.2;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 /* Chatbot Input */
@@ -517,18 +535,15 @@ body.winter-theme .quick-action:hover {
 @media (max-width: 480px) {
     .chatbot-container {
         left: 15px;
-        bottom: 80px;
+        bottom: 20px;
     }
     
     .chatbot-window {
         width: calc(100vw - 30px);
-        height: calc(100vh - 150px);
+        height: calc(100vh - 100px);
         max-height: 600px;
-    }
-    
-    .chatbot-container {
-        bottom: 20px;
-        left: 20px;
+        left: 15px;
+        bottom: 80px;
     }
     
     .chatbot-button {
@@ -537,12 +552,23 @@ body.winter-theme .quick-action:hover {
         font-size: 1.3rem;
     }
     
+    .chatbot-quick-actions {
+        grid-template-columns: repeat(auto-fit, minmax(65px, 1fr));
+        gap: 6px;
+        padding: 12px 15px;
+    }
+    
     .quick-action {
-        padding: 10px 6px;
+        padding: 10px 4px;
         font-size: 0.7rem;
+        min-width: 65px;
     }
     
     .quick-action i {
         font-size: 1.1rem;
+    }
+    
+    .chatbot-input {
+        font-size: 0.9rem;
     }
 }

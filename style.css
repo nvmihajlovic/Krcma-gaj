@@ -7235,6 +7235,124 @@ body.winter-theme textarea:focus-visible {
     }
 }
 
+/* ================================
+   Extra Small Devices (< 375px)
+   Optimizacija za veoma male telefone
+   ================================ */
+@media (max-width: 375px) {
+    /* Navbar */
+    .nav-container {
+        padding: 0 12px;
+        gap: 8px;
+    }
+    
+    .logo img {
+        height: 35px;
+    }
+    
+    .logo-text {
+        font-size: 1.1rem;
+    }
+    
+    .theme-toggle,
+    .language-toggle,
+    .btn-call {
+        width: 36px;
+        height: 36px;
+        font-size: 0.8rem;
+    }
+    
+    /* Hero */
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+        padding: 0 5px;
+    }
+    
+    .hero-badge {
+        font-size: 0.875rem;
+        padding: 7px 14px;
+    }
+    
+    /* Buttons */
+    .btn {
+        font-size: 0.875rem;
+        padding: 11px 20px;
+    }
+    
+    /* Section Titles */
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+    }
+    
+    /* Menu Items */
+    .menu-item {
+        padding: 20px;
+    }
+    
+    .menu-item-name {
+        font-size: 1.1rem;
+    }
+    
+    .menu-item-description {
+        font-size: 0.875rem;
+    }
+    
+    .menu-item-price {
+        font-size: 1.1rem;
+    }
+    
+    /* Contact Form */
+    .contact-form-wrapper {
+        padding: 20px;
+        border-radius: 20px;
+    }
+    
+    .form-control {
+        font-size: 14px;
+        padding: 10px 14px;
+    }
+    
+    /* Footer */
+    .footer-content {
+        gap: 30px;
+    }
+    
+    .footer-column h4 {
+        font-size: 1rem;
+    }
+    
+    .footer-links a,
+    .footer-contact li {
+        font-size: 0.875rem;
+    }
+    
+    .copyright {
+        font-size: 0.8rem;
+    }
+    
+    /* Gallery */
+    .gallery-item {
+        height: 220px;
+    }
+    
+    /* Testimonials */
+    .testimonial-card {
+        padding: 20px;
+    }
+    
+    .testimonial-text {
+        font-size: 0.875rem;
+    }
+}
+
 
 
 

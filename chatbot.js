@@ -2,7 +2,19 @@
 // Chatbot Functionality
 // ================================
 
+// Check if Tawk.to is loaded and hide custom chatbot
+if (typeof Tawk_API !== 'undefined') {
+    document.body.classList.add('tawk-active');
+}
+
 document.addEventListener('DOMContentLoaded', function() {
+    // Double check for Tawk.to after DOM load
+    setTimeout(() => {
+        if (typeof Tawk_API !== 'undefined' || document.querySelector('#tawkchat-container')) {
+            document.body.classList.add('tawk-active');
+        }
+    }, 1000);
+    
     const chatbotButton = document.getElementById('chatbotButton');
     const chatbotWindow = document.getElementById('chatbotWindow');
     const closeChatbot = document.getElementById('chatbotClose');
@@ -21,6 +33,17 @@ document.addEventListener('DOMContentLoaded', function() {
         currentLang = document.documentElement.lang || 'sr';
         updateNotificationText();
         updateInputPlaceholder();
+        updateQuickActionLabels();
+        updateChatbotHeader();
+        updateChatbotFooter();
+    }
+
+    // Get translation
+    function t(key) {
+        if (typeof translations !== 'undefined' && translations[currentLang] && translations[currentLang][key]) {
+            return translations[currentLang][key];
+        }
+        return key;
     }
 
     // Update notification text based on language
@@ -28,9 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (notification) {
             const span = notification.querySelector('span');
             if (span) {
-                span.textContent = currentLang === 'en' 
-                    ? 'Hey! Can I help? 👋' 
-                    : 'Хеј! Могу ли да помогнем? 👋';
+                span.textContent = t('chatbot.greeting');
             }
         }
     }
@@ -39,10 +60,33 @@ document.addEventListener('DOMContentLoaded', function() {
     function updateInputPlaceholder() {
         const input = document.getElementById('chatbotInput');
         if (input) {
-            input.placeholder = currentLang === 'en'
-                ? 'Type your message...'
-                : 'Упишите вашу поруку...';
+            input.placeholder = t('chatbot.placeholder');
         }
+    }
+    
+    // Update quick action labels
+    function updateQuickActionLabels() {
+        quickActions.forEach(action => {
+            const span = action.querySelector('span');
+            const actionType = action.dataset.action;
+            if (span && actionType) {
+                span.textContent = t(`chatbot.action.${actionType}`);
+            }
+        });
+    }
+    
+    // Update chatbot header
+    function updateChatbotHeader() {
+        const title = document.querySelector('.chatbot-header h3');
+        const status = document.querySelector('.chatbot-header p');
+        if (title) title.textContent = t('chatbot.title');
+        if (status) status.textContent = t('chatbot.status');
+    }
+    
+    // Update chatbot footer
+    function updateChatbotFooter() {
+        const footer = document.querySelector('.chatbot-footer small');
+        if (footer) footer.textContent = t('chatbot.disclaimer');
     }
 
     // Show notification periodically
@@ -90,10 +134,7 @@ document.addEventListener('DOMContentLoaded', function() {
         chatbotWindow.classList.toggle('active');
         
         if (isOpen && messageCount === 0) {
-            const welcomeMsg = currentLang === 'en' 
-                ? 'Welcome! How can I help you today? 😊'
-                : 'Добродошли! Како могу да вам помогнем данас? 😊';
-            addBotMessage(welcomeMsg);
+            addBotMessage(t('chatbot.welcome'));
         }
     });
 
@@ -115,49 +156,121 @@ document.addEventListener('DOMContentLoaded', function() {
     function handleQuickAction(action) {
         hasInteracted = true;
         
-        const messages = {
-            sr: {
-                menu: {
-                    user: 'Прикажи мени',
-                    bot: 'Ево нашег менија! Можете кликнути на "Мени" у навигацији или скроловати до секције менија. Имамо традиционална јела, пића и десерте. 🍴'
-                },
-                contact: {
-                    user: 'Контакт информације',
-                    bot: 'Можете нас контактирати на:\n📞 031 3841962\n✉️ krcmagaj@gmail.com\n📍 Његошева 186, Златибор\n🕐 Радно време: Сваки дан 10:00 - 23:00'
-                }
-            },
-            en: {
-                menu: {
-                    user: 'Show menu',
-                    bot: 'Here\'s our menu! You can click "Menu" in the navigation or scroll to the menu section. We have traditional dishes, drinks and desserts. 🍴'
-                },
-                contact: {
-                    user: 'Contact information',
-                    bot: 'You can contact us at:\n📞 031 3841962\n✉️ krcmagaj@gmail.com\n📍 Njegoševa 186, Zlatibor\n🕐 Working hours: Every day 10:00 - 23:00'
-                }
-            }
-        };
-        
-        const lang = messages[currentLang] || messages.sr;
-        
         switch(action) {
             case 'menu':
-                addUserMessage(lang.menu.user);
+                addUserMessage(t('chatbot.menu.user'));
                 setTimeout(() => {
-                    addBotMessage(lang.menu.bot);
+                    addBotMessage(t('chatbot.menu.bot'));
                     setTimeout(() => {
-                        document.getElementById('menu').scrollIntoView({ behavior: 'smooth' });
+                        document.getElementById('menu')?.scrollIntoView({ behavior: 'smooth' });
                     }, 500);
                 }, 500);
                 break;
                 
             case 'contact':
-                addUserMessage(lang.contact.user);
+                addUserMessage(t('chatbot.contact.user'));
                 setTimeout(() => {
-                    addBotMessage(lang.contact.bot);
+                    addBotMessage(t('chatbot.contact.bot'));
+                }, 500);
+                break;
+                
+            case 'location':
+                addUserMessage(t('chatbot.location.user'));
+                setTimeout(() => {
+                    addBotMessage(t('chatbot.location.bot'));
+                    setTimeout(() => {
+                        document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                    }, 500);
+                }, 500);
+                break;
+                
+            case 'hours':
+                addUserMessage(t('chatbot.hours.user'));
+                setTimeout(() => {
+                    addBotMessage(t('chatbot.hours.bot'));
                 }, 500);
                 break;
         }
+    }
+    
+    // Handle user input
+    const chatbotInput = document.getElementById('chatbotInput');
+    const chatbotSend = document.getElementById('chatbotSend');
+    
+    function handleUserInput() {
+        const message = chatbotInput.value.trim();
+        if (message === '') return;
+        
+        hasInteracted = true;
+        addUserMessage(message);
+        chatbotInput.value = '';
+        
+        // Analyze message and respond
+        setTimeout(() => {
+            const response = analyzeMessage(message);
+            addBotMessage(response.text);
+            
+            if (response.action) {
+                setTimeout(() => {
+                    document.getElementById(response.action)?.scrollIntoView({ behavior: 'smooth' });
+                }, 500);
+            }
+        }, 500);
+    }
+    
+    // Analyze user message and generate response
+    function analyzeMessage(message) {
+        const msg = message.toLowerCase();
+        
+        // Menu related
+        if (msg.match(/meni|menu|jela|hrana|jesti|food|dish|eat/i)) {
+            return { text: t('chatbot.menu.bot'), action: 'menu' };
+        }
+        
+        // Location related
+        if (msg.match(/lokacija|gde|adresa|kako|doći|location|where|address|how to get/i)) {
+            return { text: t('chatbot.location.bot'), action: 'contact' };
+        }
+        
+        // Hours related
+        if (msg.match(/radno|vreme|kad|otvoreno|zatvoreno|working|hours|open|close/i)) {
+            return { text: t('chatbot.hours.bot'), action: null };
+        }
+        
+        // Reservation related - now returns "we don't take reservations"
+        if (msg.match(/rezervacija|rezervisati|rezervišem|sto|booking|reserve|reservation|table/i)) {
+            return { text: t('chatbot.reservation.bot'), action: null };
+        }
+        
+        // Contact related
+        if (msg.match(/kontakt|telefon|email|pozovite|contact|phone|call/i)) {
+            return { text: t('chatbot.contact.bot'), action: null };
+        }
+        
+        // Specialties related
+        if (msg.match(/preporuka|šta|preporučujete|specijal|najbolje|recommend|special|best/i)) {
+            return { text: t('chatbot.specialties.bot'), action: 'menu' };
+        }
+        
+        // Greetings
+        if (msg.match(/zdravo|ćao|cao|dobar dan|hi|hello|hey/i)) {
+            return { text: t('chatbot.welcome'), action: null };
+        }
+        
+        // Default response
+        return { text: t('chatbot.notunderstood'), action: null };
+    }
+    
+    if (chatbotSend) {
+        chatbotSend.addEventListener('click', handleUserInput);
+    }
+    
+    if (chatbotInput) {
+        chatbotInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                handleUserInput();
+            }
+        });
     }
 
     // Add user message

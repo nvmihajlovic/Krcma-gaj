@@ -147,15 +147,23 @@ const guruPopup = document.getElementById('guru-popup');
 const guruPopupClose = document.getElementById('guru-popup-close');
 
 if (guruPopup && guruPopupClose) {
-    // Прикажи прозор након 2 секунде
-    setTimeout(() => {
-        guruPopup.classList.add('show');
-    }, 2000);
+    // Провери да ли је корисник већ видео popup
+    const hasSeenGuruPopup = localStorage.getItem('hasSeenGuruPopup');
+    
+    // Прикажи само ако корисник није видео
+    if (!hasSeenGuruPopup) {
+        // Прикажи прозор након 2 секунде
+        setTimeout(() => {
+            guruPopup.classList.add('show');
+            // Означи да је корисник видео popup
+            localStorage.setItem('hasSeenGuruPopup', 'true');
+        }, 2000);
 
-    // Аутоматски сакриј након 5 секунди (укупно 7 секунди од учитавања)
-    setTimeout(() => {
-        guruPopup.classList.remove('show');
-    }, 7000);
+        // Аутоматски сакриј након 5 секунди (укупно 7 секунди од учитавања)
+        setTimeout(() => {
+            guruPopup.classList.remove('show');
+        }, 7000);
+    }
 
     // Дугме за затварање
     guruPopupClose.addEventListener('click', () => {
@@ -168,6 +176,16 @@ if (guruPopup && guruPopupClose) {
             guruPopup.classList.remove('show');
         }
     });
+}
+
+// ================================
+// Helper function for theme color
+// ================================
+function updateThemeColor(theme) {
+    const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+    if (metaThemeColor) {
+        metaThemeColor.setAttribute('content', theme === 'winter' ? '#0369a1' : '#d97706');
+    }
 }
 
 // ================================
@@ -214,6 +232,9 @@ if (currentTheme === 'winter') {
     document.documentElement.classList.add('winter-theme');
     document.body.classList.add('winter-theme');
 }
+
+// Update theme-color on initial load
+updateThemeColor(currentTheme);
 
 // Прикажи предлог само први пут (ако тема није мењана раније)
 if (!hasSeenSuggestion && themeSuggestion && themeSuggestionText) {
@@ -309,6 +330,9 @@ themeToggle.addEventListener('click', () => {
     // Сачувај преференцу
     const theme = document.body.classList.contains('winter-theme') ? 'winter' : 'summer';
     localStorage.setItem('theme', theme);
+    
+    // Update theme-color meta tag
+    updateThemeColor(theme);
     
     // Додај малу bounce анимацију при клику
     themeToggle.style.transform = 'scale(0.9)';
