@@ -2,7 +2,8 @@
 <html lang="sr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Крчма Гај - Најбољи ресторан на Златибору</title>
     <meta name="description" content="Традиционална јела златиборског краја. Најбоља домаћа храна на Zlatibору са прелепим погледом на Чиготу. Аутентична домаћа кухиња, свеже намирнице, традиционални рецепти.">
     
@@ -32,6 +33,40 @@
     <link rel="manifest" href="images/favicon/site.webmanifest">
     <meta name="theme-color" content="#d97706">
     
+    <!-- SEO & Crawling -->
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+    <meta name="google" content="nositelinkssearchbox">
+    <meta name="google" content="notranslate">
+    
+    <!-- Geographic SEO -->
+    <meta name="geo.region" content="RS-29">
+    <meta name="geo.placename" content="Zlatibor">
+    <meta name="geo.position" content="43.7364;19.7117">
+    <meta name="ICBM" content="43.7364, 19.7117">
+    
+    <!-- Language & Locale -->
+    <meta http-equiv="content-language" content="sr">
+    <link rel="alternate" hreflang="sr" href="https://krcmagaj.rs/">
+    <link rel="alternate" hreflang="en" href="https://krcmagaj.rs/?lang=en">
+    <link rel="alternate" hreflang="x-default" href="https://krcmagaj.rs/">
+    
+    <!-- Performance & Security Headers -->
+    <meta http-equiv="X-DNS-Prefetch-Control" content="on">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <!-- Mobile App Meta -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Крчма Гај">
+    <meta name="application-name" content="Крчма Гај">
+    <meta name="format-detection" content="telephone=yes">
+    
+    <!-- Microsoft -->
+    <meta name="msapplication-TileColor" content="#d97706">
+    <meta name="msapplication-config" content="images/favicon/browserconfig.xml">
+    
     <!-- Resource Hints for Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,18 +75,16 @@
     <link rel="dns-prefetch" href="https://awards.infcdn.net">
     <link rel="dns-prefetch" href="https://maps.googleapis.com">
     
-    <!-- Preload Critical Hero Image -->
+    <!-- Preload Critical Fonts -->`n    <link rel=\"preload\" href=\"https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2\" as=\"font\" type=\"font/woff2\" crossorigin>`n    <link rel=\"preload\" href=\"https://fonts.gstatic.com/s/playfairdisplay/v36/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKdFvUDQZNLo_U2r.woff2\" as=\"font\" type=\"font/woff2\" crossorigin>`n    `n    <!-- Preload Critical Hero Image -->
     <link rel="preload" href="https://krcmagajzlatibor.rs/img/hero.webp" as="image" fetchpriority="high">
     
     <!-- Critical CSS Only -->
-    <link rel="stylesheet" href="style.css?v=38">`n    `n    <!-- Inline Critical Performance CSS -->`n    <style>`n    section:not(.hero) { content-visibility: auto; contain-intrinsic-size: 0 500px; }`n    .fade-in, .slide-up, .scale-in { will-change: transform; transform: translateZ(0); }`n    </style>
+    <link rel="stylesheet" href="style.css?v=38">`n    `n    <!-- Inline Critical Performance CSS -->`n    <style>`n    section:not(.hero) { content-visibility: auto; contain-intrinsic-size: 0 500px; }`n    .fade-in, .slide-up, .scale-in { will-change: transform; transform: translateZ(0); }`n    /* Mobile optimizations */`n@media (max-width: 768px) {`n  body { -webkit-font-smoothing: antialiased; }`n  * { -webkit-tap-highlight-color: transparent; }`n}`n</style>
     
     <!-- Defer Non-Critical CSS -->
     <link rel="stylesheet" href="enhancements.css?v=3" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="toast-notifications.css?v=1" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="weather-popup.css?v=1" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="chatbot.css?v=4" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="weather-popup.css?v=1" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="https://awards.infcdn.net/2024/badge-circledLeaves27.css" media="print" onload="this.media='all'"/>
     
     <!-- Fonts with font-display swap -->
@@ -61,9 +94,7 @@
     <noscript>
         <link rel="stylesheet" href="enhancements.css?v=3">
         <link rel="stylesheet" href="toast-notifications.css?v=1">
-        <link rel="stylesheet" href="weather-popup.css?v=1">
-        <link rel="stylesheet" href="chatbot.css?v=4">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="weather-popup.css?v=1"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
         <link rel="stylesheet" href="https://awards.infcdn.net/2024/badge-circledLeaves27.css">
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     </noscript>
@@ -151,7 +182,7 @@
             }
         })();
     </script>
-</head>
+    <!-- Async CSS loader polyfill -->`n    <script>`n    (function(){var l=document.querySelectorAll(\"link[media=print][onload]\");l.forEach(function(e){e.onload=null;e.removeAttribute(\"onload\");e.media=\"all\"})})();`n    </script>`n</head>
 <body>
     <!-- Skip to Content Link for Screen Readers -->
     <a href="#main-content" class="skip-to-content">Пређи на главни садржај</a>
@@ -1416,78 +1447,7 @@
         <img src="" alt="Gallery Image" id="lightbox-image">
     </div>
 
-    <!-- Chatbot Widget -->
-    <div class="chatbot-container">
-        <div class="chatbot-notification" id="chatbotNotification">
-            <span data-i18n="chatbot.greeting">Хеј! Могу ли да помогнем? 👋</span>
-        </div>
-        <button class="chatbot-button" id="chatbotButton" data-i18n-aria="chatbot.button.label" aria-label="Open assistant">
-            <i class="fas fa-comments"></i>
-            <span class="chatbot-badge">1</span>
-        </button>
-        
-        <div class="chatbot-window" id="chatbotWindow">
-            <div class="chatbot-header">
-                <div class="chatbot-header-info">
-                    <i class="fas fa-utensils"></i>
-                    <div>
-                        <h3 data-i18n="chatbot.title">Крчма Гај Асистент</h3>
-                        <p data-i18n="chatbot.status">Онлајн • Одговара брзо</p>
-                    </div>
-                </div>
-                <button class="chatbot-close" id="chatbotClose" data-i18n-aria="chatbot.close.label" aria-label="Close">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            
-            <div class="chatbot-messages" id="chatMessages">
-                <div class="chatbot-welcome-image">
-                    <img src="images/jelo-specijalitet.jpg" data-i18n-alt="chatbot.welcome.image" alt="Krčma Gaj" onerror="this.style.display='none'">
-                </div>
-                <!-- Messages are added dynamically via JavaScript -->
-            </div>
-            
-            <div class="chatbot-quick-actions">
-                <button class="quick-action" data-action="menu">
-                    <i class="fas fa-utensils"></i>
-                    <span data-i18n="chatbot.action.menu">Мени</span>
-                </button>
-                <button class="quick-action" data-action="location">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span data-i18n="chatbot.action.location">Локација</span>
-                </button>
-                <button class="quick-action" data-action="hours">
-                    <i class="fas fa-clock"></i>
-                    <span data-i18n="chatbot.action.hours">Радно време</span>
-                </button>
-                <button class="quick-action" data-action="contact">
-                    <i class="fas fa-phone"></i>
-                    <span data-i18n="chatbot.action.contact">Контакт</span>
-                </button>
-            </div>
-            
-            <div class="chatbot-input-wrapper">
-                <input 
-                    type="text" 
-                    class="chatbot-input" 
-                    id="chatbotInput" 
-                    data-i18n-placeholder="chatbot.placeholder"
-                    placeholder="Type your message..."
-                    data-i18n-aria="chatbot.input.label"
-                    aria-label="Type message"
-                >
-                <button class="chatbot-send" id="chatbotSend" data-i18n-aria="chatbot.send.label" aria-label="Send">
-                    <i class="fas fa-paper-plane"></i>
-                </button>
-            </div>
-            
-            <div class="chatbot-footer">
-                <small data-i18n="chatbot.disclaimer">💡 Аутоматски одговори • За директну комуникацију позовите 031 3841962</small>
-            </div>
-        </div>
-    </div>
-
-    <!--Start of Tawk.to Script-->
+<!--Start of Tawk.to Script-->
     <script type="text/javascript">
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
     (function(){
@@ -1503,15 +1463,13 @@
 
     <!-- Critical scripts with defer -->
     <script defer src="translations.js?v=22"></script>
-    <script defer src="script.js?v=20"></script>
+    <script defer src="script.js?v=21"></script>
     
     <!-- Non-critical scripts loaded after page load -->
     <script>
     window.addEventListener('load', function() {
         setTimeout(function() {
-            var scripts = [
-                {src: 'chatbot.js?v=6', defer: true},
-                {src: 'enhancements.js?v=3', defer: true},
+            var scripts = [{src: 'enhancements.js?v=3', defer: true},
                 {src: 'features.js?v=1', defer: true}
             ];
             scripts.forEach(function(scriptData) {
