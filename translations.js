@@ -258,7 +258,8 @@ const translations = {
         'floating.writeus': 'Пишите нам',
         
         // Theme & Tooltips
-        'theme.suggestion': 'Провери и нашу зимску тему!',
+        'theme.suggestion.winter': 'Провери и нашу летњу тему!',
+        'theme.suggestion.summer': 'Провери и нашу зимску тему!',
         'theme.toggle': 'Промени тему',
         'floating.tooltip': 'Контактирајте нас',
         
@@ -798,7 +799,8 @@ const translations = {
         'floating.writeus': 'Write to Us',
         
         // Theme & Tooltips
-        'theme.suggestion': 'Check out our winter theme!',
+        'theme.suggestion.winter': 'Check out our summer theme!',
+        'theme.suggestion.summer': 'Check out our winter theme!',
         'theme.toggle': 'Change theme',
         'floating.tooltip': 'Contact us',
         

@@ -241,11 +241,8 @@ if (!hasSeenSuggestion && themeSuggestion && themeSuggestionText) {
     console.log('Will show theme suggestion popup');
     setTimeout(() => {
         // Постави текст на основу тренутне теме
-        if (currentTheme === 'winter') {
-            themeSuggestionText.textContent = 'Провери и нашу летњу тему!';
-        } else {
-            themeSuggestionText.textContent = 'Провери и нашу зимску тему!';
-        }
+        const suggestionKey = currentTheme === 'winter' ? 'theme.suggestion.winter' : 'theme.suggestion.summer';
+        themeSuggestionText.textContent = getTranslation(suggestionKey);
         
         themeSuggestion.classList.add('show');
         console.log('Theme suggestion popup shown');
