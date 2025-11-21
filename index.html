@@ -53,7 +53,7 @@
     
     <!-- Performance & Security Headers -->
     <meta http-equiv="X-DNS-Prefetch-Control" content="on">
-    <meta name="referrer" content="no-referrer-when-downgrade">
+    <meta name="referrer" content="no-referrer-when-downgrade">`n    <meta http-equiv="X-Content-Type-Options" content="nosniff">`n    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">`n    <meta http-equiv="Permissions-Policy" content="interest-cohort=()">`n    $csp
     
     <!-- Mobile App Meta -->
     <meta name="mobile-web-app-capable" content="yes">
@@ -79,7 +79,7 @@
     <link rel="preload" href="https://krcmagajzlatibor.rs/img/hero.webp" as="image" fetchpriority="high">
     
     <!-- Critical CSS Only -->
-    <link rel="stylesheet" href="style.css?v=38">`n    `n    <!-- Inline Critical Performance CSS -->`n    <style>`n    section:not(.hero) { content-visibility: auto; contain-intrinsic-size: 0 500px; }`n    .fade-in, .slide-up, .scale-in { will-change: transform; transform: translateZ(0); }`n    /* Mobile optimizations */`n@media (max-width: 768px) {`n  body { -webkit-font-smoothing: antialiased; }`n  * { -webkit-tap-highlight-color: transparent; }`n}`n</style>
+    <link rel="stylesheet" href="style.css?v=39">`n    `n    <!-- Inline Critical Performance CSS -->`n    <style>`n    section:not(.hero) { content-visibility: auto; contain-intrinsic-size: 0 500px; }`n    .fade-in, .slide-up, .scale-in { will-change: transform; transform: translateZ(0); }`n    /* Mobile optimizations */`n@media (max-width: 768px) {`n  body { -webkit-font-smoothing: antialiased; }`n  * { -webkit-tap-highlight-color: transparent; }`n}`n</style>
     
     <!-- Defer Non-Critical CSS -->
     <link rel="stylesheet" href="enhancements.css?v=3" media="print" onload="this.media='all'">
@@ -201,8 +201,8 @@
     <!-- Restaurant Guru Popup -->
     <div class="guru-popup" id="guru-popup">
         <div class="guru-popup-content">
-            <button class="guru-popup-close" id="guru-popup-close">
-                <i class="fas fa-times"></i>
+            <button class="guru-popup-close" id="guru-popup-close" aria-label="Затвори Restaurant Guru обавештење">
+                <i class="fas fa-times" aria-hidden="true"></i>
             </button>
             <div class="guru-popup-icon">
                 <i class="fas fa-award"></i>
@@ -220,8 +220,8 @@
     <div class="reservation-modal" id="reservation-modal">
         <div class="modal-overlay"></div>
         <div class="modal-content">
-            <button class="modal-close" id="modal-close">
-                <i class="fas fa-times"></i>
+            <button class="modal-close" id="modal-close" aria-label="Затвори подсетник за тему">
+                <i class="fas fa-times" aria-hidden="true"></i>
             </button>
             <div class="modal-header">
                 <i class="fas fa-calendar-alt"></i>
@@ -493,31 +493,31 @@
             </div>
 
             <div class="menu-filters">
-                <button class="filter-btn active" data-filter="all">
+                <button class="filter-btn active" data-filter="all" aria-label="Show all menu items">
                     <i class="fas fa-utensils"></i>
                     <span data-i18n="menu.all">Све категорије</span>
                 </button>
-                <button class="filter-btn" data-filter="hladno">
+                <button class="filter-btn" data-filter="hladno" aria-label="Filter by hladno">
                     <i class="fas fa-cheese"></i>
                     <span data-i18n="menu.appetizers">Хладна предјела</span>
                 </button>
-                <button class="filter-btn" data-filter="mlecni">
+                <button class="filter-btn" data-filter="mlecni" aria-label="Filter by mlecni">
                     <i class="fas fa-glass-whiskey"></i>
                     <span data-i18n="menu.dairy">Млечни производи</span>
                 </button>
-                <button class="filter-btn" data-filter="salate">
+                <button class="filter-btn" data-filter="salate" aria-label="Filter by salate">
                     <i class="fas fa-leaf"></i>
                     <span data-i18n="menu.salads">Салате</span>
                 </button>
-                <button class="filter-btn" data-filter="domaca">
+                <button class="filter-btn" data-filter="domaca" aria-label="Filter by domaca">
                     <i class="fas fa-bread-slice"></i>
                     <span data-i18n="menu.main">Домаћа јела</span>
                 </button>
-                <button class="filter-btn" data-filter="heljda">
+                <button class="filter-btn" data-filter="heljda" aria-label="Filter by heljda">
                     <i class="fas fa-mortar-pestle"></i>
                     <span data-i18n="menu.buckwheat">Јела од хељде</span>
                 </button>
-                <button class="filter-btn" data-filter="poslastice">
+                <button class="filter-btn" data-filter="poslastice" aria-label="Filter by poslastice">
                     <i class="fas fa-birthday-cake"></i>
                     <span data-i18n="menu.desserts">Посластице</span>
                 </button>
@@ -753,23 +753,23 @@
             </div>
 
             <div class="menu-filters">
-                <button class="drinks-filter-btn active" data-filter="all">
+                <button class="drinks-filter-btn active" data-filter="all" aria-label="Filter drinks by all">
                     <i class="fas fa-glass-cheers"></i>
                     <span data-i18n="drinks.all">Све пића</span>
                 </button>
-                <button class="drinks-filter-btn" data-filter="vina-piva">
+                <button class="drinks-filter-btn" data-filter="vina-piva" aria-label="Filter drinks by vina-piva">
                     <i class="fas fa-wine-bottle"></i>
                     <span data-i18n="drinks.wine.beer">Вина и пива</span>
                 </button>
-                <button class="drinks-filter-btn" data-filter="zestoka">
+                <button class="drinks-filter-btn" data-filter="zestoka" aria-label="Filter drinks by zestoka">
                     <i class="fas fa-wine-glass-alt"></i>
                     <span data-i18n="drinks.strong">Жестока пића</span>
                 </button>
-                <button class="drinks-filter-btn" data-filter="ostali">
+                <button class="drinks-filter-btn" data-filter="ostali" aria-label="Filter drinks by ostali">
                     <i class="fas fa-mug-hot"></i>
                     <span data-i18n="drinks.other">Остали напици</span>
                 </button>
-                <button class="drinks-filter-btn" data-filter="bezalkoholna">
+                <button class="drinks-filter-btn" data-filter="bezalkoholna" aria-label="Filter drinks by bezalkoholna">
                     <i class="fas fa-glass-water"></i>
                     <span data-i18n="drinks.soft">Безалкохолна</span>
                 </button>
@@ -1463,7 +1463,7 @@
 
     <!-- Critical scripts with defer -->
     <script defer src="translations.js?v=22"></script>
-    <script defer src="script.js?v=21"></script>
+    <script defer src="script.js?v=22"></script>
     
     <!-- Non-critical scripts loaded after page load -->
     <script>

@@ -4,8 +4,7 @@
 function createParticles() {
     const particlesContainer = document.getElementById('particles');
     if (!particlesContainer) {
-        console.warn('Честице контејнер није пронађен');
-        return;
+                return;
     }
     const particleCount = 50;
     
@@ -195,10 +194,6 @@ const themeToggle = document.getElementById('theme-toggle');
 const themeSuggestion = document.getElementById('theme-suggestion');
 const themeSuggestionText = document.getElementById('theme-suggestion-text');
 
-console.log('Theme toggle:', themeToggle);
-console.log('Theme suggestion element:', themeSuggestion);
-console.log('Theme suggestion text:', themeSuggestionText);
-
 // Аутоматско постављање теме на основу датума
 function getSeasonalTheme() {
     const today = new Date();
@@ -221,13 +216,7 @@ const seasonalTheme = getSeasonalTheme();
 const savedTheme = localStorage.getItem('theme');
 const currentTheme = savedTheme || seasonalTheme;
 
-console.log('Seasonal theme:', seasonalTheme);
-console.log('Saved theme:', savedTheme);
-console.log('Current theme:', currentTheme);
-
 const hasSeenSuggestion = localStorage.getItem('themeToggleSeen');
-console.log('Has seen suggestion:', hasSeenSuggestion);
-
 if (currentTheme === 'winter') {
     document.documentElement.classList.add('winter-theme');
     document.body.classList.add('winter-theme');
@@ -238,16 +227,13 @@ updateThemeColor(currentTheme);
 
 // Прикажи предлог само први пут (ако тема није мењана раније)
 if (!hasSeenSuggestion && themeSuggestion && themeSuggestionText) {
-    console.log('Will show theme suggestion popup');
-    setTimeout(() => {
+        setTimeout(() => {
         // Постави текст на основу тренутне теме
         const suggestionKey = currentTheme === 'winter' ? 'theme.suggestion.winter' : 'theme.suggestion.summer';
         themeSuggestionText.textContent = getTranslation(suggestionKey);
         
         themeSuggestion.classList.add('show');
-        console.log('Theme suggestion popup shown');
-        
-        // Пусти пријатан звук обавештења
+                // Пусти пријатан звук обавештења
         try {
             const audioContext = new (window.AudioContext || window.webkitAudioContext)();
             const oscillator = audioContext.createOscillator();
@@ -280,8 +266,7 @@ if (!hasSeenSuggestion && themeSuggestion && themeSuggestionText) {
                 osc2.stop(audioContext.currentTime + 0.3);
             }, 100);
         } catch (e) {
-            console.log('Audio not supported:', e);
-        }
+                    }
         
         // Сакриј након 5 секунди
         setTimeout(() => {
@@ -311,8 +296,7 @@ themeToggle.addEventListener('click', () => {
         oscillator.start(audioContext.currentTime);
         oscillator.stop(audioContext.currentTime + 0.1);
     } catch (e) {
-        console.log('Audio not supported:', e);
-    }
+            }
     
     // Означи да је корисник видео и интеракцију са променом теме
     localStorage.setItem('themeToggleSeen', 'true');
@@ -358,12 +342,10 @@ languageToggle.addEventListener('click', () => {
     if (document.body.classList.contains('lang-en')) {
         localStorage.setItem('language', 'en');
         translatePage('en');
-        console.log('Switched to English');
-    } else {
+            } else {
         localStorage.setItem('language', 'sr');
         translatePage('sr');
-        console.log('Switched to Serbian');
-    }
+            }
     
     // Додај bounce анимацију
     languageToggle.style.transform = 'scale(0.9) rotate(15deg)';
@@ -384,10 +366,6 @@ const floatingContact = document.getElementById('floating-contact');
 const backToTop = document.getElementById('back-to-top');
 const heroSection = document.getElementById('pocetna');
 
-console.log('Floating contact button:', floatingContact);
-console.log('Back to top button:', backToTop);
-console.log('Hero section:', heroSection);
-
 if (floatingContact && heroSection && backToTop) {
     // Почетно сакриј оба дугмета
     floatingContact.classList.remove('visible');
@@ -401,16 +379,11 @@ if (floatingContact && heroSection && backToTop) {
 
     const heroObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            console.log('Hero intersecting:', entry.isIntersecting);
-            console.log('Intersection ratio:', entry.intersectionRatio);
-            
-            if (entry.isIntersecting) {
-                console.log('Showing contact, hiding back-to-top');
-                floatingContact.classList.add('visible');
+                                    if (entry.isIntersecting) {
+                                floatingContact.classList.add('visible');
                 backToTop.classList.remove('visible');
             } else {
-                console.log('Hiding contact, showing back-to-top');
-                floatingContact.classList.remove('visible');
+                                floatingContact.classList.remove('visible');
                 backToTop.classList.add('visible');
             }
         });
@@ -511,8 +484,7 @@ reservationForm.addEventListener('submit', (e) => {
         note: document.getElementById('res-note').value
     };
     
-    console.log('Reservation:', formData);
-    showNotification('Ваша резервација је успешно примљена! Контактираћемо вас ускоро.', 'success');
+        showNotification('Ваша резервација је успешно примљена! Контактираћемо вас ускоро.', 'success');
     reservationForm.reset();
     closeReservationModal();
 });
@@ -1273,8 +1245,7 @@ function playNotificationSound(type) {
             oscillator.stop(audioContext.currentTime + 0.25);
         }
     } catch (e) {
-        console.log('Audio not supported:', e);
-    }
+            }
 }
 
 // Функција за обавештења
@@ -1484,9 +1455,7 @@ if ('IntersectionObserver' in window) {
 // Иницијализација при учитавању DOM-а
 // ================================
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('Крчма Гај website loaded successfully! 🍽️');
-    
-    // Постави транзиције за ставке менија
+        // Постави транзиције за ставке менија
     menuItems.forEach(item => {
         item.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
     });
@@ -1574,8 +1543,7 @@ function initCookieConsent() {
             playSound(800, 0.1, 'sine');
         }
         
-        console.log('All cookies accepted', settings);
-    });
+            });
     
     // Одбиј све cookie-је
     declineBtn.addEventListener('click', () => {
@@ -1595,8 +1563,7 @@ function initCookieConsent() {
             playSound(600, 0.1, 'sine');
         }
         
-        console.log('Cookies declined', settings);
-    });
+            });
     
     // Сачувај прилагођена cookie подешавања
     saveSettingsBtn.addEventListener('click', () => {
@@ -1619,8 +1586,7 @@ function initCookieConsent() {
             playSound(800, 0.1, 'sine');
         }
         
-        console.log('Cookie settings saved', settings);
-    });
+            });
 }
 
 // Иницијализуј сагласност за cookie-је
