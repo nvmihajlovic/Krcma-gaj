@@ -1,0 +1,290 @@
+# ==============================================================================
+# KRCMA GAJ - PRODUCTION .HTACCESS
+# Optimized for cPanel Shared Hosting
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# | Cross-Origin Requests (CORS)                                               |
+# ------------------------------------------------------------------------------
+
+<IfModule mod_headers.c>
+    # Allow fonts from CDN
+    <FilesMatch "\.(ttf|ttc|otf|eot|woff|woff2)$">
+        Header set Access-Control-Allow-Origin "*"
+    </FilesMatch>
+</IfModule>
+
+# ------------------------------------------------------------------------------
+# | Error Documents                                                            |
+# ------------------------------------------------------------------------------
+
+ErrorDocument 404 /404.html
+ErrorDocument 500 /404.html
+
+# ------------------------------------------------------------------------------
+# | Compression (GZIP)                                                         |
+# ------------------------------------------------------------------------------
+
+<IfModule mod_deflate.c>
+    # Compress HTML, CSS, JavaScript, Text, XML and fonts
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
+    AddOutputFilterByType DEFLATE application/x-font
+    AddOutputFilterByType DEFLATE application/x-font-opentype
+    AddOutputFilterByType DEFLATE application/x-font-otf
+    AddOutputFilterByType DEFLATE application/x-font-truetype
+    AddOutputFilterByType DEFLATE application/x-font-ttf
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE font/opentype
+    AddOutputFilterByType DEFLATE font/otf
+    AddOutputFilterByType DEFLATE font/ttf
+    AddOutputFilterByType DEFLATE image/svg+xml
+    AddOutputFilterByType DEFLATE image/x-icon
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/xml
+
+    # Remove browser bugs (only needed for really old browsers)
+    BrowserMatch ^Mozilla/4 gzip-only-text/html
+    BrowserMatch ^Mozilla/4\.0[678] no-gzip
+    BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+    Header append Vary User-Agent
+</IfModule>
+
+# ------------------------------------------------------------------------------
+# | ETags (remove them)                                                        |
+# ------------------------------------------------------------------------------
+
+<IfModule mod_headers.c>
+    Header unset ETag
+</IfModule>
+FileETag None
+
+# ------------------------------------------------------------------------------
+# | Expires Headers (for better cache control)                                |
+# ------------------------------------------------------------------------------
+
+<IfModule mod_expires.c>
+    ExpiresActive on
+    ExpiresDefault                                      "access plus 1 month"
+
+    # CSS
+    ExpiresByType text/css                              "access plus 1 year"
+
+    # Data interchange
+    ExpiresByType application/atom+xml                  "access plus 1 hour"
+    ExpiresByType application/rdf+xml                   "access plus 1 hour"
+    ExpiresByType application/rss+xml                   "access plus 1 hour"
+    ExpiresByType application/json                      "access plus 0 seconds"
+    ExpiresByType application/ld+json                   "access plus 0 seconds"
+    ExpiresByType application/schema+json               "access plus 0 seconds"
+    ExpiresByType application/vnd.geo+json              "access plus 0 seconds"
+    ExpiresByType application/xml                       "access plus 0 seconds"
+    ExpiresByType text/xml                              "access plus 0 seconds"
+
+    # Favicon (cannot be renamed!) and cursor images
+    ExpiresByType image/vnd.microsoft.icon              "access plus 1 week"
+    ExpiresByType image/x-icon                          "access plus 1 week"
+
+    # HTML
+    ExpiresByType text/html                             "access plus 0 seconds"
+
+    # JavaScript
+    ExpiresByType application/javascript                "access plus 1 year"
+    ExpiresByType application/x-javascript              "access plus 1 year"
+    ExpiresByType text/javascript                       "access plus 1 year"
+
+    # Manifest files
+    ExpiresByType application/manifest+json             "access plus 1 week"
+    ExpiresByType application/x-web-app-manifest+json   "access plus 0 seconds"
+    ExpiresByType text/cache-manifest                   "access plus 0 seconds"
+
+    # Media files
+    ExpiresByType audio/ogg                             "access plus 1 month"
+    ExpiresByType image/bmp                             "access plus 1 month"
+    ExpiresByType image/gif                             "access plus 1 month"
+    ExpiresByType image/jpeg                            "access plus 1 month"
+    ExpiresByType image/jpg                             "access plus 1 month"
+    ExpiresByType image/png                             "access plus 1 month"
+    ExpiresByType image/svg+xml                         "access plus 1 month"
+    ExpiresByType image/webp                            "access plus 1 month"
+    ExpiresByType video/mp4                             "access plus 1 month"
+    ExpiresByType video/ogg                             "access plus 1 month"
+    ExpiresByType video/webm                            "access plus 1 month"
+
+    # Web fonts
+    ExpiresByType application/vnd.ms-fontobject         "access plus 1 year"
+    ExpiresByType font/eot                              "access plus 1 year"
+    ExpiresByType font/opentype                         "access plus 1 year"
+    ExpiresByType font/otf                              "access plus 1 year"
+    ExpiresByType application/x-font-ttf                "access plus 1 year"
+    ExpiresByType font/ttf                              "access plus 1 year"
+    ExpiresByType application/font-woff                 "access plus 1 year"
+    ExpiresByType application/x-font-woff               "access plus 1 year"
+    ExpiresByType font/woff                             "access plus 1 year"
+    ExpiresByType application/font-woff2                "access plus 1 year"
+    ExpiresByType font/woff2                            "access plus 1 year"
+
+    # Other
+    ExpiresByType text/x-cross-domain-policy            "access plus 1 week"
+</IfModule>
+
+# ------------------------------------------------------------------------------
+# | Cache-Control Headers                                                      |
+# ------------------------------------------------------------------------------
+
+<IfModule mod_headers.c>
+    # CSS
+    <FilesMatch "\.(css)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+
+    # JavaScript
+    <FilesMatch "\.(js)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+
+    # Images
+    <FilesMatch "\.(jpg|jpeg|png|gif|webp|svg|ico)$">
+        Header set Cache-Control "public, max-age=2592000"
+    </FilesMatch>
+
+    # Fonts
+    <FilesMatch "\.(woff|woff2|ttf|eot|otf)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+
+    # HTML (no cache)
+    <FilesMatch "\.(html|htm)$">
+        Header set Cache-Control "no-cache, no-store, must-revalidate"
+        Header set Pragma "no-cache"
+        Header set Expires "0"
+    </FilesMatch>
+</IfModule>
+
+# ------------------------------------------------------------------------------
+# | Security Headers                                                           |
+# ------------------------------------------------------------------------------
+
+<IfModule mod_headers.c>
+    # X-Frame-Options
+    Header always set X-Frame-Options "SAMEORIGIN"
+    
+    # X-Content-Type-Options
+    Header always set X-Content-Type-Options "nosniff"
+    
+    # X-XSS-Protection
+    Header always set X-XSS-Protection "1; mode=block"
+    
+    # Referrer-Policy
+    Header always set Referrer-Policy "no-referrer-when-downgrade"
+    
+    # Permissions-Policy (formerly Feature-Policy)
+    Header always set Permissions-Policy "geolocation=(self), microphone=(), camera=()"
+    
+    # Strict-Transport-Security (HSTS) - Uncomment after SSL is working!
+    # Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+</IfModule>
+
+# ------------------------------------------------------------------------------
+# | HTTPS Redirect (uncomment after SSL certificate is installed)             |
+# ------------------------------------------------------------------------------
+
+# <IfModule mod_rewrite.c>
+#     RewriteEngine On
+#     RewriteCond %{HTTPS} off
+#     RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# </IfModule>
+
+# ------------------------------------------------------------------------------
+# | WWW Redirect (remove www from URL)                                        |
+# ------------------------------------------------------------------------------
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+    RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+</IfModule>
+
+# ------------------------------------------------------------------------------
+# | Trailing Slash Redirect                                                    |
+# ------------------------------------------------------------------------------
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    # Remove trailing slash from non-filepath URLs
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [R=301,L]
+</IfModule>
+
+# ------------------------------------------------------------------------------
+# | Prevent Access to Hidden Files and Directories                            |
+# ------------------------------------------------------------------------------
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_URI} "!(^|/)\.well-known/([^./]+./?)+$" [NC]
+    RewriteCond %{SCRIPT_FILENAME} -d [OR]
+    RewriteCond %{SCRIPT_FILENAME} -f
+    RewriteRule "(^|/)\." - [F]
+</IfModule>
+
+# ------------------------------------------------------------------------------
+# | Block Access to Backup and Source Files                                   |
+# ------------------------------------------------------------------------------
+
+<FilesMatch "(^#.*#|\.(bak|conf|dist|fla|in[ci]|log|psd|sh|sql|sw[op])|~)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+</FilesMatch>
+
+# ------------------------------------------------------------------------------
+# | File Concatenation (if your server supports it)                           |
+# ------------------------------------------------------------------------------
+
+<IfModule mod_rewrite.c>
+    Options +FollowSymlinks
+    RewriteEngine On
+</IfModule>
+
+# ------------------------------------------------------------------------------
+# | UTF-8 Encoding                                                             |
+# ------------------------------------------------------------------------------
+
+AddDefaultCharset utf-8
+
+<IfModule mod_mime.c>
+    # JavaScript
+    AddCharset utf-8 .js
+
+    # CSS
+    AddCharset utf-8 .css
+
+    # HTML
+    AddCharset utf-8 .html .htm
+
+    # JSON
+    AddCharset utf-8 .json
+    AddCharset utf-8 .xml
+</IfModule>
+
+# ------------------------------------------------------------------------------
+# | PHP Configuration (if needed)                                              |
+# ------------------------------------------------------------------------------
+
+# php_flag display_errors Off
+# php_value upload_max_filesize 64M
+# php_value post_max_size 64M
+# php_value max_execution_time 300
+# php_value max_input_time 300
+
+# ==============================================================================
+# END OF .HTACCESS
+# ==============================================================================

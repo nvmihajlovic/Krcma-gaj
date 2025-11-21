@@ -1,0 +1,97 @@
+================================================================================
+                    ✅ PRE-DEPLOYMENT CHECKLIST
+================================================================================
+
+Корак по корак - означи ✓ када завршиш:
+
+□ 1. CPANEL PRISTUP
+   □ Имам cPanel login URL (domen.rs/cpanel)
+   □ Имам username
+   □ Имам password
+
+□ 2. UPLOAD FAJLOVA
+   □ Распаковао KrcmaGaj-Production-cPanel.zip
+   □ Loginovao на cPanel
+   □ Отворио File Manager
+   □ Ушао у public_html
+   □ Обрисао стаке/подразумеване фајлове
+   □ Upload-овао све из production-cpanel фолдера
+   □ .htaccess је присутан (провери - скривен је!)
+
+□ 3. SSL SERTIFIKAT
+   □ Активирао SSL на cPanel (Let's Encrypt)
+   □ Uncomment-овао HTTPS redirect у .htaccess
+   □ Тестирао https:// редирект
+
+□ 4. INTEGRACIJE
+   □ Tawk.to - Registrovao се
+   □ Tawk.to - Добио Property ID и Widget ID
+   □ Tawk.to - Ažurirao у index.html
+   □ Google Maps - Kreirao API key
+   □ Google Maps - Ažurirao у index.html
+
+□ 5. PODEŠAVANJA
+   □ Ažurirao robots.txt са pravim domenom
+   □ Ažurirao sitemap.xml са pravim domenom
+   □ Proverio permissions (644 fajlovi, 755 folderi)
+
+□ 6. EMAIL
+   □ Kreirao info@tvojdomen.rs
+   □ Testirao slanje/prijem
+
+□ 7. TESTIRANJE
+   □ Glavna stranica radi
+   □ Meni i filteri rade
+   □ Galerija radi
+   □ Jezik switch (SR/EN) radi
+   □ Tema switch (Leto/Zima) radi
+   □ Kontakt forma radi
+   □ 404 stranica radi
+   □ Responsive na mobilnom
+
+□ 8. PERFORMANCE TEST
+   □ PageSpeed Insights test:
+     Mobile skor: _____
+     Desktop skor: _____
+   □ GTmetrix test (opciono)
+
+□ 9. SEO SETUP
+   □ Google Search Console - dodao sajt
+   □ Google Search Console - submit-ovao sitemap.xml
+   □ Google Business Profile - povezao
+   □ Meta tagovi provereni
+
+□ 10. SOCIAL MEDIA
+   □ Facebook Open Graph test
+   □ Twitter Card validator
+   □ LinkedIn post preview
+
+================================================================================
+                          🚨 HITNE IZMENE
+================================================================================
+
+AKO NEŠTO NE RADI:
+
+1. Proveri browser konzolu (F12 → Console)
+2. Proveri cPanel → Metrics → Errors
+3. Privremeno isključi .htaccess (preimenuj u .htaccess.backup)
+4. Očisti browser keš (Ctrl+Shift+R)
+
+================================================================================
+                      📞 KONTAKT ZA PODRŠKU
+================================================================================
+
+Tehnička podrška: kontakt@pansoft.rs
+Developer: nvmihajlovic
+
+================================================================================
+
+✅ Kada završiš sve - GOTOV SI! 🎉
+
+Skor target:
+- Performance: 75-90 (mobile), 90+ (desktop)
+- SEO: 100
+- Accessibility: 95-100
+- Best Practices: 100
+
+================================================================================

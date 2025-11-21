@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Политика приватности - Крчма Гај</title>
+    <meta name="description" content="Политика приватности Крчме Гај - Како чувамо ваше личне податке">
+    <link rel="canonical" href="https://krcmagaj.rs/politika-privatnosti.html">
+    <link rel="stylesheet" href="style.css?v=6">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://awards.infcdn.net/2024/badge-circledLeaves27.css" rel="stylesheet"/>
+    <script>
+        // Apply saved theme immediately before page renders
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            console.log('[POLICY INLINE] Saved theme:', savedTheme);
+            if (savedTheme === 'winter') {
+                console.log('[POLICY INLINE] Applying winter-theme');
+                document.documentElement.classList.add('winter-theme');
+                // Also add to body when it's ready
+                if (document.body) {
+                    document.body.classList.add('winter-theme');
+                } else {
+                    document.addEventListener('DOMContentLoaded', function() {
+                        document.body.classList.add('winter-theme');
+                    });
+                }
+            }
+        })();
+    </script>
+</head>
+<body>
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.webp" alt="Крчма Гај Logo">
+                </a>
+            </div>
+            
+            <!-- Theme Toggle -->
+            <div class="theme-toggle-wrapper">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Season Theme">
+                    <i class="fas fa-sun summer-icon"></i>
+                    <i class="fas fa-snowflake winter-icon"></i>
+                </button>
+            </div>
+            
+            <!-- Language Toggle -->
+            <button class="language-toggle" id="language-toggle" aria-label="Change Language">
+                <span class="lang-flag sr-flag">🇷🇸</span>
+                <span class="lang-flag en-flag">🇬🇧</span>
+                <span class="lang-text"></span>
+            </button>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html#pocetna" class="nav-link" data-i18n="nav.home">Почетна</a></li>
+                <li><a href="index.html#o-nama" class="nav-link" data-i18n="nav.about">О нама</a></li>
+                <li><a href="index.html#jelovnik" class="nav-link" data-i18n="nav.menu">Јеловник</a></li>
+                <li><a href="index.html#karta-pica" class="nav-link" data-i18n="nav.drinks">Карта пића</a></li>
+                <li><a href="index.html#galerija" class="nav-link" data-i18n="nav.gallery">Галерија</a></li>
+                <li><a href="index.html#kontakt" class="nav-link" data-i18n="nav.contact">Контакт</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="tel:+381313841962" class="btn-call">
+                    <i class="fas fa-phone"></i>
+                    <span data-i18n="nav.call">031 3841962</span>
+                </a>
+                <button class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Policy Hero -->
+    <section class="policy-hero">
+        <div class="policy-hero-background">
+            <div class="policy-hero-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="policy-hero-content">
+                <div class="policy-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h1 class="policy-title" data-i18n="privacy.page.title">Политика приватности</h1>
+                <p class="policy-subtitle" data-i18n="privacy.page.subtitle">Заштита ваших личних података је наш приоритет</p>
+                <div class="policy-meta">
+                    <span><i class="fas fa-calendar"></i> <span data-i18n="privacy.page.updated">Последње ажурирање: 15.11.2025.</span></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Policy Content -->
+    <section class="policy-content">
+        <div class="container">
+            <div class="policy-wrapper">
+                <!-- Table of Contents -->
+                <aside class="policy-sidebar">
+                    <div class="policy-toc">
+                        <h3><i class="fas fa-list"></i> <span data-i18n="privacy.toc.title">Садржај</span></h3>
+                        <ul>
+                            <li><a href="#uvod" data-i18n="privacy.toc.intro">Увод</a></li>
+                            <li><a href="#prikupljanje" data-i18n="privacy.toc.collection">Прикупљање података</a></li>
+                            <li><a href="#koriscenje" data-i18n="privacy.toc.usage">Коришћење података</a></li>
+                            <li><a href="#cuvanje" data-i18n="privacy.toc.storage">Чување података</a></li>
+                            <li><a href="#deljenje" data-i18n="privacy.toc.sharing">Дељење са трећим лицима</a></li>
+                            <li><a href="#prava" data-i18n="privacy.toc.rights">Ваша права</a></li>
+                            <li><a href="#bezbednost" data-i18n="privacy.toc.security">Безбедност</a></li>
+                            <li><a href="#kontakt" data-i18n="privacy.toc.contact">Контактирајте нас</a></li>
+                        </ul>
+                    </div>
+                    <div class="policy-help">
+                        <i class="fas fa-question-circle"></i>
+                        <h4 data-i18n="privacy.help.title">Потребна помоћ?</h4>
+                        <p data-i18n="privacy.help.text">Контактирајте нас за више информација</p>
+                        <a href="index.html#kontakt" class="btn btn-sm btn-primary" data-i18n="privacy.help.button">Контакт</a>
+                    </div>
+                </aside>
+
+                <!-- Main Content -->
+                <div class="policy-main">
+                    <div class="policy-section" id="uvod">
+                        <div class="section-icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <h2 data-i18n="privacy.section1.title">1. Увод</h2>
+                        <p data-i18n="privacy.section1.text1">Добродошли на веб сајт Крчме Гај. Ова политика приватности објашњава како прикупљамо, користимо, чувамо и штитимо ваше личне податке када посећујете наш веб сајт или користите наше услуге.</p>
+                        <p data-i18n="privacy.section1.text2">Поштовање ваше приватности је за нас од кључног значаја. Обавезујемо се да чувамо ваше личне податке у складу са законом о заштити података о личности Републике Србије.</p>
+                    </div>
+
+                    <div class="policy-section" id="prikupljanje">
+                        <div class="section-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h2 data-i18n="privacy.section2.title">2. Прикупљање података</h2>
+                        <p data-i18n="privacy.section2.text1">Прикупљамо различите врсте података када користите наш веб сајт:</p>
+                        
+                        <div class="policy-card">
+                            <h3><i class="fas fa-user"></i> <span data-i18n="privacy.section2.personal.title">Лични подаци</span></h3>
+                            <ul>
+                                <li data-i18n="privacy.section2.personal.item1">Име и презиме</li>
+                                <li data-i18n="privacy.section2.personal.item2">Е-mail адреса</li>
+                                <li data-i18n="privacy.section2.personal.item3">Број телефона</li>
+                                <li data-i18n="privacy.section2.personal.item4">Информације о резервацији</li>
+                            </ul>
+                        </div>
+
+                        <div class="policy-card">
+                            <h3><i class="fas fa-chart-line"></i> <span data-i18n="privacy.section2.technical.title">Технички подаци</span></h3>
+                            <ul>
+                                <li data-i18n="privacy.section2.technical.item1">IP адреса</li>
+                                <li data-i18n="privacy.section2.technical.item2">Тип прегледача</li>
+                                <li data-i18n="privacy.section2.technical.item3">Оперативни систем</li>
+                                <li data-i18n="privacy.section2.technical.item4">Подаци о употреби сајта</li>
+                                <li data-i18n="privacy.section2.technical.item5">Колачићи и сличне технологије</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="policy-section" id="koriscenje">
+                        <div class="section-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h2 data-i18n="privacy.section3.title">3. Коришћење података</h2>
+                        <p data-i18n="privacy.section3.text1">Ваше личне податке користимо у следеће сврхе:</p>
+                        
+                        <div class="policy-grid">
+                            <div class="policy-feature">
+                                <i class="fas fa-calendar-check"></i>
+                                <h4 data-i18n="privacy.section3.feature1.title">Резервације</h4>
+                                <p data-i18n="privacy.section3.feature1.text">Обрада и потврђивање ваших резервација</p>
+                            </div>
+                            <div class="policy-feature">
+                                <i class="fas fa-envelope"></i>
+                                <h4 data-i18n="privacy.section3.feature2.title">Комуникација</h4>
+                                <p data-i18n="privacy.section3.feature2.text">Одговарање на ваша питања и захтеве</p>
+                            </div>
+                            <div class="policy-feature">
+                                <i class="fas fa-chart-bar"></i>
+                                <h4 data-i18n="privacy.section3.feature3.title">Унапређење</h4>
+                                <p data-i18n="privacy.section3.feature3.text">Побољшање наших услуга и корисничког искуства</p>
+                            </div>
+                            <div class="policy-feature">
+                                <i class="fas fa-bell"></i>
+                                <h4 data-i18n="privacy.section3.feature4.title">Обавештења</h4>
+                                <p data-i18n="privacy.section3.feature4.text">Слање важних информација и ажурирања</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="policy-section" id="cuvanje">
+                        <div class="section-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h2 data-i18n="privacy.section4.title">4. Чување података</h2>
+                        <p data-i18n="privacy.section4.text1">Ваше личне податке чувамо онолико дуго колико је потребно за остваривање сврха за које су прикупљени, или како то налаже закон:</p>
+                        
+                        <div class="policy-timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-icon">
+                                    <i class="fas fa-calendar-day"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h4 data-i18n="privacy.section4.timeline1.title">Подаци о резервацији</h4>
+                                    <p data-i18n="privacy.section4.timeline1.text">Чувају се 2 године након последње резервације</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-icon">
+                                    <i class="fas fa-comments"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h4 data-i18n="privacy.section4.timeline2.title">Комуникација</h4>
+                                    <p data-i18n="privacy.section4.timeline2.text">Чува се 1 годину након последње комуникације</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-icon">
+                                    <i class="fas fa-cookie"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h4 data-i18n="privacy.section4.timeline3.title">Колачићи</h4>
+                                    <p data-i18n="privacy.section4.timeline3.text">Варира од сесијских до 12 месеци</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="policy-section" id="deljenje">
+                        <div class="section-icon">
+                            <i class="fas fa-share-alt"></i>
+                        </div>
+                        <h2 data-i18n="privacy.section5.title">5. Дељење са трећим лицима</h2>
+                        <p data-i18n="privacy.section5.text1">Не продајемо, не размењујемо нити на други начин преносимо ваше личне податке трећим лицима, осим у следећим случајевима:</p>
+                        
+                        <div class="policy-alert">
+                            <i class="fas fa-info-circle"></i>
+                            <div>
+                                <h4 data-i18n="privacy.section5.alert1.title">Сервисни провајдери</h4>
+                                <p data-i18n="privacy.section5.alert1.text">Можемо делити податке са поузданим сервисним провајдерима који нам помажу у пословању (нпр. хостинг провајдери, аналитика).</p>
+                            </div>
+                        </div>
+
+                        <div class="policy-alert">
+                            <i class="fas fa-gavel"></i>
+                            <div>
+                                <h4 data-i18n="privacy.section5.alert2.title">Законски захтеви</h4>
+                                <p data-i18n="privacy.section5.alert2.text">Када је то потребно да бисмо испоштовали законске обавезе или заштитили наша права.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="policy-section" id="prava">
+                        <div class="section-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <h2 data-i18n="privacy.section6.title">6. Ваша права</h2>
+                        <p data-i18n="privacy.section6.text1">У складу са законом о заштити података, имате следећа права:</p>
+                        
+                        <div class="policy-rights">
+                            <div class="right-item">
+                                <div class="right-icon">
+                                    <i class="fas fa-eye"></i>
+                                </div>
+                                <h4 data-i18n="privacy.section6.right1.title">Право на приступ</h4>
+                                <p data-i18n="privacy.section6.right1.text">Можете затражити приступ вашим личним подацима</p>
+                            </div>
+                            <div class="right-item">
+                                <div class="right-icon">
+                                    <i class="fas fa-edit"></i>
+                                </div>
+                                <h4 data-i18n="privacy.section6.right2.title">Право на исправку</h4>
+                                <p data-i18n="privacy.section6.right2.text">Можете тражити исправку нетачних података</p>
+                            </div>
+                            <div class="right-item">
+                                <div class="right-icon">
+                                    <i class="fas fa-trash"></i>
+                                </div>
+                                <h4 data-i18n="privacy.section6.right3.title">Право на брисање</h4>
+                                <p data-i18n="privacy.section6.right3.text">Можете тражити брисање ваших података</p>
+                            </div>
+                            <div class="right-item">
+                                <div class="right-icon">
+                                    <i class="fas fa-ban"></i>
+                                </div>
+                                <h4 data-i18n="privacy.section6.right4.title">Право на ограничење</h4>
+                                <p data-i18n="privacy.section6.right4.text">Можете ограничити обраду ваших података</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="policy-section" id="bezbednost">
+                        <div class="section-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <h2 data-i18n="privacy.section7.title">7. Безбедност података</h2>
+                        <p data-i18n="privacy.section7.text1">Примењујемо одговарајуће техничке и организационе мере за заштиту ваших личних података:</p>
+                        
+                        <div class="security-features">
+                            <div class="security-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <span data-i18n="privacy.section7.security1">SSL енкрипција</span>
+                            </div>
+                            <div class="security-item">
+                                <i class="fas fa-server"></i>
+                                <span data-i18n="privacy.section7.security2">Сигурни сервери</span>
+                            </div>
+                            <div class="security-item">
+                                <i class="fas fa-user-lock"></i>
+                                <span data-i18n="privacy.section7.security3">Контрола приступа</span>
+                            </div>
+                            <div class="security-item">
+                                <i class="fas fa-history"></i>
+                                <span data-i18n="privacy.section7.security4">Редовне резервне копије</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="policy-section" id="kontakt">
+                        <div class="section-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h2 data-i18n="privacy.section8.title">8. Контактирајте нас</h2>
+                        <p data-i18n="privacy.section8.text1">Ако имате питања о нашој политици приватности или желите да остварите своја права, контактирајте нас:</p>
+                        
+                        <div class="contact-info-box">
+                            <div class="contact-method">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <strong data-i18n="privacy.section8.address.label">Адреса</strong>
+                                    <p data-i18n="privacy.section8.address.value">Гајеви, Златибор, Србија</p>
+                                </div>
+                            </div>
+                            <div class="contact-method">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <strong data-i18n="privacy.section8.phone.label">Телефон</strong>
+                                    <p><a href="tel:+381313841962" data-i18n="privacy.section8.phone.value">+381 31 3841962</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="policy-footer-nav">
+                        <a href="politika-kolacica.html" class="policy-nav-btn">
+                            <span data-i18n="privacy.footer.next">Следећа страница</span>
+                            <strong><span data-i18n="privacy.footer.nextpage">Политика колачића</span> <i class="fas fa-arrow-right"></i></strong>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column footer-brand">
+                    <div class="footer-logo">
+                        <img src="images/logo.webp" alt="Крчма Гај Logo" onerror="this.src='images/logo.png'">
+                    </div>
+                    <p class="footer-description" data-i18n="footer.description">
+                        Ваш омиљени етно ресторан на Златибору. Традиционална јела припремљена са љубављу.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/krcmagaj.zlatibor" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/krcmagaj/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4 data-i18n="footer.links.title">Брзе везе</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#pocetna"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.home">Почетна</span></a></li>
+                        <li><a href="index.html#o-nama"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.about">О нама</span></a></li>
+                        <li><a href="index.html#jelovnik"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.menu">Јеловник</span></a></li>
+                        <li><a href="index.html#karta-pica"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.drinks">Карта пића</span></a></li>
+                        <li><a href="index.html#galerija"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.gallery">Галерија</span></a></li>
+                        <li><a href="index.html#kontakt"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.contact">Контакт</span></a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4 data-i18n="footer.contact.title">Контакт</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <div class="footer-contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="footer-contact-text">
+                                <span data-i18n="footer.address">Гајеви, Златибор, Србија</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="footer-contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="footer-contact-text">
+                                <a href="tel:+381313841962">+381 31 3841962</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="footer-contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="footer-contact-text">
+                                <span data-i18n="footer.hours">Радно време: 09:00 - 22:00</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-column footer-badge">
+                    <h4 data-i18n="footer.recommendation">Препорука</h4>
+                    <a id="b-circledLeaves27" target="_blank" href="https://restaurantguru.com/Krcma-Gaj-Zlatibor" class="b-circledLeaves27--light b-circledLeaves27--2025">
+                        <span class="b-circledLeaves27__title">Recommended</span>
+                        <span class="b-circledLeaves27__separator"></span>
+                        <span class="b-circledLeaves27__name">Krcma Gaj</span>
+                    </a>
+                    <a href="tel:+381313841962" class="footer-cta-btn">
+                        <i class="fas fa-phone-alt"></i>
+                        <span data-i18n="footer.callus">Позовите нас</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p class="copyright" data-i18n="footer.copyright">&copy; 2025 Крчма Гај. Сва права задржана.</p>
+                    <div class="footer-policies">
+                        <a href="politika-privatnosti.html" class="policy-link" data-i18n="footer.privacy">Политика приватности</a>
+                        <span class="policy-divider">|</span>
+                        <a href="politika-kolacica.html" class="policy-link" data-i18n="footer.cookies">Политика колачића</a>
+                        <span class="policy-divider">|</span>
+                        <a href="uslovi-koriscenja.html" class="policy-link" data-i18n="footer.terms">Услови коришћења</a>
+                    </div>
+                    <div class="footer-credits">
+                        <span class="credits-text" data-i18n="footer.design">Дизајн и израда</span>
+                        <a href="https://www.pansoft.rs" target="_blank" class="pansoft-link">
+                            <img src="images/pansoft logo bela slova-01.png" alt="Pansoft" class="pansoft-logo">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
