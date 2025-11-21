@@ -1071,7 +1071,7 @@ body.winter-theme .hamburger.active span {
     background-image: url('https://krcmagajzlatibor.rs/img/hero.webp');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    /* Removed background-attachment: fixed for better performance */
 }
 
 .hero-overlay {

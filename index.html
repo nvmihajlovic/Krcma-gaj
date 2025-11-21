@@ -44,7 +44,7 @@
     <link rel="preload" href="https://krcmagajzlatibor.rs/img/hero.webp" as="image" fetchpriority="high">
     
     <!-- Critical CSS Only -->
-    <link rel="stylesheet" href="style.css?v=37">
+    <link rel="stylesheet" href="style.css?v=38">`n    `n    <!-- Inline Critical Performance CSS -->`n    <style>`n    section:not(.hero) { content-visibility: auto; contain-intrinsic-size: 0 500px; }`n    .fade-in, .slide-up, .scale-in { will-change: transform; transform: translateZ(0); }`n    </style>
     
     <!-- Defer Non-Critical CSS -->
     <link rel="stylesheet" href="enhancements.css?v=3" media="print" onload="this.media='all'">
@@ -1501,11 +1501,28 @@
     </script>
     <!--End of Tawk.to Script-->
 
+    <!-- Critical scripts with defer -->
     <script defer src="translations.js?v=22"></script>
-    <script defer src="chatbot.js?v=6"></script>
-    <script defer src="script.js?v=19"></script>
-    <script defer src="enhancements.js?v=3"></script>
-    <script defer src="features.js?v=1"></script>
+    <script defer src="script.js?v=20"></script>
+    
+    <!-- Non-critical scripts loaded after page load -->
+    <script>
+    window.addEventListener('load', function() {
+        setTimeout(function() {
+            var scripts = [
+                {src: 'chatbot.js?v=6', defer: true},
+                {src: 'enhancements.js?v=3', defer: true},
+                {src: 'features.js?v=1', defer: true}
+            ];
+            scripts.forEach(function(scriptData) {
+                var script = document.createElement('script');
+                script.src = scriptData.src;
+                if (scriptData.defer) script.defer = true;
+                document.body.appendChild(script);
+            });
+        }, 100);
+    });
+    </script>
     <script async src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
 </body>
 </html>
