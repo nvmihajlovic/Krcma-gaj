@@ -41,6 +41,7 @@
     <link rel="stylesheet" href="enhancements.css?v=3">
     <link rel="stylesheet" href="toast-notifications.css?v=1">
     <link rel="stylesheet" href="weather-popup.css?v=1">
+    <link rel="stylesheet" href="chatbot.css?v=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1169,7 +1170,23 @@
             </div>
 
             <div class="map-wrapper">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2906.8799476476234!2d19.69945931550641!3d43.27472837913785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4759d4a9b9999999%3A0x9999999999999999!2sGajevi%2C%20Zlatibor!5e0!3m2!1sen!2srs!4v1234567890123!5m2!1sen!2srs" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="map-glow-effect"></div>
+                <div class="map-marker-animated">
+                    <div class="marker-pin">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <div class="marker-pulse"></div>
+                    <div class="marker-shadow"></div>
+                </div>
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2906.8799476476234!2d19.69945931550641!3d43.27472837913785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4759d4a9b9999999%3A0x9999999999999999!2sGajevi%2C%20Zlatibor!5e0!3m2!1sen!2srs!4v1234567890123!5m2!1sen!2srs" 
+                    width="100%" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
                 <a href="https://www.google.com/maps/dir//Гајеви,+Златибор" target="_blank" class="directions-btn">
                     <i class="fas fa-map-marked-alt"></i>
                     <span data-i18n="contact.directions">Како до нас</span>
@@ -1379,9 +1396,73 @@
         <img src="" alt="Gallery Image" id="lightbox-image">
     </div>
 
+    <!-- Chatbot Widget -->
+    <div class="chatbot-container">
+        <div class="chatbot-notification" id="chatbotNotification">
+            <span data-i18n="chatbot.greeting">Хеј! Могу ли да помогнем? 👋</span>
+        </div>
+        <button class="chatbot-button" id="chatbotButton" aria-label="Отвори асистента">
+            <i class="fas fa-comments"></i>
+            <span class="chatbot-badge">1</span>
+        </button>
+        
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">
+                <div class="chatbot-header-info">
+                    <i class="fas fa-utensils"></i>
+                    <div>
+                        <h3 data-i18n="chatbot.title">Крчма Гај Асистент</h3>
+                        <p data-i18n="chatbot.status">Онлајн • Одговара брзо</p>
+                    </div>
+                </div>
+                <button class="chatbot-close" id="chatbotClose" aria-label="Затвори">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="chatbot-messages" id="chatMessages">
+                <div class="chatbot-welcome-image">
+                    <img src="images/gallery5.webp" alt="Крчма Гај" onerror="this.style.display='none'">
+                </div>
+                <!-- Поруке се додају динамички преко JavaScript -->
+            </div>
+            
+            <div class="chatbot-quick-actions">
+                <button class="quick-action" data-action="menu">
+                    <i class="fas fa-utensils"></i>
+                    <span data-i18n="chatbot.action.menu">Мени</span>
+                </button>
+                <button class="quick-action" data-action="contact">
+                    <i class="fas fa-phone"></i>
+                    <span data-i18n="chatbot.action.contact">Контакт</span>
+                </button>
+            </div>
+            
+            <div class="chatbot-input-wrapper">
+                <input 
+                    type="text" 
+                    class="chatbot-input" 
+                    id="chatbotInput" 
+                    data-i18n-placeholder="chatbot.placeholder"
+                    placeholder="Упишите вашу поруку..."
+                    aria-label="Упишите поруку"
+                >
+                <button class="chatbot-send" id="chatbotSend" aria-label="Пошаљи">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+            
+            <div class="chatbot-footer">
+                <small data-i18n="chatbot.disclaimer">💡 Аутоматски одговори • За директну комуникацију позовите 031 3841962</small>
+            </div>
+        </div>
+    </div>
+
     <script src="translations.js?v=17"></script>
+    <script src="chatbot.js"></script>
     <script src="script.js?v=15"></script>
     <script src="enhancements.js?v=3"></script>
+    <script src="features.js?v=1"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
 </body>
 </html>

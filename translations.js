@@ -172,7 +172,13 @@ const translations = {
         'contact.hours': 'Радно време',
         'contact.hours.value': 'Сваког дана<br>09:00 - 22:00',
         'contact.follow': 'Пратите нас',
-        'contact.directions': 'Како до нас',
+        'contact.directions': 'Упутства за долазак',
+        'contact.location.title': 'Посетите нас',
+        'contact.address.label': 'Адреса',
+        'contact.parking.label': 'Паркинг',
+        'contact.parking.text': 'Бесплатан паркинг',
+        'contact.distance.label': 'Удаљеност',
+        'contact.distance.text': '10 мин од центра',
         'contact.info.phone': 'Телефон',
         'contact.info.email': 'Е-пошта',
         'contact.info.address': 'Адреса',
@@ -193,6 +199,16 @@ const translations = {
         'contact.form.message': 'Ваша порука',
         'contact.form.submit': 'Пошаљите',
         
+        // Chatbot
+        'chatbot.greeting': 'Хеј! Могу ли да помогнем? 👋',
+        'chatbot.title': 'Крчма Гај Асистент',
+        'chatbot.status': 'Онлајн • Одговара брзо',
+        'chatbot.action.menu': 'Мени',
+        'chatbot.action.reservation': 'Резервација',
+        'chatbot.action.contact': 'Контакт',
+        'chatbot.placeholder': 'Упишите вашу поруку...',
+        'chatbot.disclaimer': '💡 Аутоматски одговори • За директну комуникацију позовите 031 3841962',
+
         // Footer
         'footer.description': 'Ваш омиљени етно ресторан на Златибору. Традиционална јела припремљена са љубављу.',
         'footer.links.title': 'Брзе везе',
@@ -670,6 +686,12 @@ const translations = {
         'contact.hours.value': 'Every day<br>09:00 AM - 10:00 PM',
         'contact.follow': 'Follow Us',
         'contact.directions': 'Get Directions',
+        'contact.location.title': 'Visit Us',
+        'contact.address.label': 'Address',
+        'contact.parking.label': 'Parking',
+        'contact.parking.text': 'Free parking',
+        'contact.distance.label': 'Distance',
+        'contact.distance.text': '10 min from center',
         'contact.info.phone': 'Phone',
         'contact.info.email': 'Email',
         'contact.info.address': 'Address',
@@ -689,6 +711,16 @@ const translations = {
         'contact.form.time': 'Time',
         'contact.form.message': 'Your Message',
         'contact.form.submit': 'Send',
+        
+        // Chatbot
+        'chatbot.greeting': 'Hey! Can I help? 👋',
+        'chatbot.title': 'Krčma Gaj Assistant',
+        'chatbot.status': 'Online • Replies quickly',
+        'chatbot.action.menu': 'Menu',
+        'chatbot.action.reservation': 'Reservation',
+        'chatbot.action.contact': 'Contact',
+        'chatbot.placeholder': 'Type your message...',
+        'chatbot.disclaimer': '💡 Automated responses • For direct communication call 031 3841962',
         
         // Footer
         'footer.description': 'Your favorite ethno restaurant in Zlatibor. Traditional dishes prepared with love.',

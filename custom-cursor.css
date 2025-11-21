@@ -1,0 +1,96 @@
+/* ================================
+   Custom Cursor
+   ================================ */
+.custom-cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transition: all 0.15s ease;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: difference;
+}
+
+.custom-cursor-follower {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transition: all 0.3s cubic-bezier(0.75, -0.27, 0.3, 1.33);
+    transform: translate(-50%, -50%);
+    opacity: 0.3;
+}
+
+body.winter-theme .custom-cursor {
+    border-color: #0369a1;
+}
+
+body.winter-theme .custom-cursor-follower {
+    background: #0369a1;
+}
+
+/* Cursor на hover */
+.custom-cursor.hover {
+    width: 50px;
+    height: 50px;
+    border-width: 3px;
+    background: var(--primary-color);
+    opacity: 0.2;
+}
+
+body.winter-theme .custom-cursor.hover {
+    background: #0369a1;
+}
+
+.custom-cursor-follower.hover {
+    width: 60px;
+    height: 60px;
+    opacity: 0.15;
+}
+
+/* Cursor Icon */
+.cursor-icon {
+    position: fixed;
+    pointer-events: none;
+    z-index: 10000;
+    font-size: 24px;
+    color: var(--primary-color);
+    transform: translate(-50%, -50%) rotate(-45deg);
+    opacity: 0;
+    transition: all 0.2s ease;
+}
+
+body.winter-theme .cursor-icon {
+    color: #0369a1;
+}
+
+.cursor-icon.active {
+    opacity: 1;
+}
+
+/* Сакриј на мобилном */
+@media (max-width: 1024px) {
+    .custom-cursor,
+    .custom-cursor-follower,
+    .cursor-icon {
+        display: none;
+    }
+}
+
+/* Hide default cursor на desktop */
+@media (min-width: 1025px) {
+    body,
+    a,
+    button,
+    input,
+    textarea,
+    select {
+        cursor: none !important;
+    }
+}

@@ -150,7 +150,7 @@ section {
     justify-content: center;
     font-size: 1.4rem;
     box-shadow: 0 8px 25px rgba(217, 119, 6, 0.4);
-    z-index: 998;
+    z-index: 997;
     transition: all 0.3s ease;
     cursor: pointer;
     opacity: 0 !important;
@@ -932,8 +932,9 @@ body.lang-en .language-toggle::after {
 
 .nav-menu {
     display: flex;
-    gap: clamp(20px, 3vw, 40px);
-    margin-right: auto;
+    gap: clamp(24px, 3vw, 42px);
+    margin: 0 auto;
+    padding: 0 20px;
     flex-wrap: nowrap;
 }
 
@@ -1180,7 +1181,8 @@ body.winter-theme .particle {
     background: transparent;
     border-radius: 0;
     filter: none;
-    animation: snowfall 15s infinite linear;
+    animation: snowfall infinite linear;
+    will-change: transform;
 }
 
 body.winter-theme .particle::before {
@@ -1193,17 +1195,17 @@ body.winter-theme .particle::before {
 
 @keyframes snowfall {
     0% {
-        transform: translateY(0) translateX(0) rotate(0deg);
+        transform: translateY(-20px) translateX(0) rotate(0deg);
         opacity: 0;
     }
-    10% {
+    5% {
         opacity: 1;
     }
-    90% {
+    95% {
         opacity: 1;
     }
     100% {
-        transform: translateY(calc(100vh + 100px)) translateX(30px) rotate(360deg);
+        transform: translateY(100vh) translateX(50px) rotate(720deg);
         opacity: 0;
     }
 }
@@ -2896,6 +2898,12 @@ body.winter-theme .testimonial-card.active {
     margin-bottom: 60px;
 }
 
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .contact-info .section-header {
     text-align: center;
     margin-bottom: 50px;
@@ -2905,6 +2913,8 @@ body.winter-theme .testimonial-card.active {
     display: flex;
     flex-direction: column;
     gap: 24px;
+    max-width: 500px;
+    width: 100%;
 }
 
 .contact-item {
@@ -3153,16 +3163,73 @@ body.winter-theme .form-group textarea:focus {
     margin-top: 8px;
 }
 
+/* Enhanced Map Wrapper */
 .map-wrapper {
     border-radius: 24px;
     overflow: hidden;
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
     height: 500px;
     position: relative;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.map-wrapper::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 24px;
+    padding: 2px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.map-wrapper:hover::before {
+    opacity: 0.6;
+}
+
+.map-wrapper:hover {
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.12);
+    transform: translateY(-5px);
+}
+
+.map-glow-effect {
+    position: absolute;
+    inset: -50px;
+    background: radial-gradient(circle at center, 
+        rgba(217, 119, 6, 0.15) 0%, 
+        transparent 70%);
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    pointer-events: none;
+    z-index: 0;
+}
+
+body.winter-theme .map-glow-effect {
+    background: radial-gradient(circle at center, 
+        rgba(3, 105, 161, 0.15) 0%, 
+        transparent 70%);
+}
+
+.map-wrapper:hover .map-glow-effect {
+    opacity: 1;
 }
 
 .map-wrapper iframe {
     height: 100%;
+    position: relative;
+    z-index: 1;
+    filter: saturate(1.1) contrast(1.05);
+    transition: filter 0.4s ease;
+}
+
+.map-wrapper:hover iframe {
+    filter: saturate(1.2) contrast(1.1);
 }
 
 .directions-btn {
@@ -3180,11 +3247,15 @@ body.winter-theme .form-group textarea:focus {
     border-radius: 16px;
     font-weight: 600;
     font-size: 1.05rem;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 8px 24px rgba(var(--primary-color-rgb, 255, 149, 0), 0.4);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 8px 24px rgba(217, 119, 6, 0.4);
     overflow: hidden;
     z-index: 10;
     text-align: center;
+}
+
+body.winter-theme .directions-btn {
+    box-shadow: 0 8px 24px rgba(3, 105, 161, 0.4);
 }
 
 .directions-btn::before {
@@ -3201,6 +3272,8 @@ body.winter-theme .form-group textarea:focus {
 .directions-btn span {
     display: inline-flex;
     align-items: center;
+    position: relative;
+    z-index: 1;
 }
 
 .directions-btn i {
@@ -3209,11 +3282,116 @@ body.winter-theme .form-group textarea:focus {
 
 .directions-btn:hover {
     transform: translateX(-50%) translateY(-3px);
-    box-shadow: 0 12px 32px rgba(var(--primary-color-rgb, 255, 149, 0), 0.5);
+    box-shadow: 0 12px 32px rgba(217, 119, 6, 0.5);
+}
+
+body.winter-theme .directions-btn:hover {
+    box-shadow: 0 12px 32px rgba(3, 105, 161, 0.5);
 }
 
 .directions-btn:hover::before {
     opacity: 1;
+}
+
+/* Animated Map Marker */
+.map-marker-animated {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    pointer-events: none;
+}
+
+.marker-pin {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: markerBounce 2s ease-in-out infinite;
+    z-index: 2;
+}
+
+body.winter-theme .marker-pin {
+    background: linear-gradient(135deg, var(--accent-color), #0ea5e9);
+}
+
+.marker-pin i {
+    font-size: 1.3rem;
+    color: white;
+    transform: rotate(45deg);
+}
+
+.marker-pulse {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: markerPulseAnim 2s ease-out infinite;
+    z-index: 1;
+}
+
+body.winter-theme .marker-pulse {
+    background: var(--accent-color);
+}
+
+.marker-shadow {
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    filter: blur(5px);
+    animation: markerShadow 2s ease-in-out infinite;
+}
+
+@keyframes markerBounce {
+    0%, 100% {
+        transform: rotate(-45deg) translateY(0);
+    }
+    50% {
+        transform: rotate(-45deg) translateY(-15px);
+    }
+}
+
+@keyframes markerPulseAnim {
+    0% {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 0.3;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(2);
+        opacity: 0;
+    }
+}
+
+@keyframes markerShadow {
+    0%, 100% {
+        transform: translateX(-50%) scale(1);
+        opacity: 0.3;
+    }
+    50% {
+        transform: translateX(-50%) scale(0.8);
+        opacity: 0.5;
+    }
 }
 
 /* ================================
@@ -5428,6 +5606,11 @@ body.winter-theme .policy-nav-btn:hover {
 }
 
 @media (max-width: 768px) {
+    .map-wrapper {
+        height: 400px;
+        border-radius: 20px;
+    }
+
     .about-hero {
         margin-bottom: 40px;
     }
@@ -6602,12 +6785,12 @@ body.winter-theme textarea:focus-visible {
     }
     
     .floating-contact {
-        width: 55px;
-        height: 55px;
+        width: 50px;
+        height: 50px;
         border-radius: 50%;
         bottom: 20px;
         right: 20px;
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
     
     .floating-contact::after {
@@ -6619,11 +6802,11 @@ body.winter-theme textarea:focus-visible {
     }
     
     .back-to-top {
-        width: 55px;
-        height: 55px;
+        width: 50px;
+        height: 50px;
         bottom: 20px;
         right: 20px;
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
     
     .modal-content {

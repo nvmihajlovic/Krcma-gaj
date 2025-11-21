@@ -13,9 +13,10 @@ function createParticles() {
         const particle = document.createElement('div');
         particle.className = 'particle';
         particle.style.left = Math.random() * 100 + '%';
-        particle.style.top = Math.random() * 100 + '%';
+        // Za snow - start from top (negative value), za summer - random position
+        particle.style.top = '-20px';
         particle.style.animationDelay = Math.random() * 20 + 's';
-        // Ne postavljamo animationDuration da CSS može da kontroliše različite animacije po temi
+        particle.style.animationDuration = (10 + Math.random() * 10) + 's'; // 10-20 seconds for smooth fall
         particlesContainer.appendChild(particle);
     }
 }
