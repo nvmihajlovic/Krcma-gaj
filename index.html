@@ -31,23 +31,42 @@
     <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
     <link rel="manifest" href="images/favicon/site.webmanifest">
     <meta name="theme-color" content="#d97706">
-    <!-- Preload Critical Resources -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" as="style">
-    <link rel="preload" href="https://krcmagajzlatibor.rs/img/hero.webp" as="image" fetchpriority="high">
-    <link rel="dns-prefetch" href="https://krcmagajzlatibor.rs">
-    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-    <link rel="dns-prefetch" href="https://awards.infcdn.net">
     
-    <link rel="stylesheet" href="style.css?v=36">
-    <link rel="stylesheet" href="enhancements.css?v=3">
-    <link rel="stylesheet" href="toast-notifications.css?v=1">
-    <link rel="stylesheet" href="weather-popup.css?v=1">
-    <link rel="stylesheet" href="chatbot.css?v=4">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Resource Hints for Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://awards.infcdn.net/2024/badge-circledLeaves27.css" rel="stylesheet"/>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://krcmagajzlatibor.rs">
+    <link rel="dns-prefetch" href="https://awards.infcdn.net">
+    <link rel="dns-prefetch" href="https://maps.googleapis.com">
+    
+    <!-- Preload Critical Hero Image -->
+    <link rel="preload" href="https://krcmagajzlatibor.rs/img/hero.webp" as="image" fetchpriority="high">
+    
+    <!-- Critical CSS Only -->
+    <link rel="stylesheet" href="style.css?v=37">
+    
+    <!-- Defer Non-Critical CSS -->
+    <link rel="stylesheet" href="enhancements.css?v=3" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="toast-notifications.css?v=1" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="weather-popup.css?v=1" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="chatbot.css?v=4" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://awards.infcdn.net/2024/badge-circledLeaves27.css" media="print" onload="this.media='all'"/>
+    
+    <!-- Fonts with font-display swap -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    
+    <!-- Fallback for browsers that don't support onload -->
+    <noscript>
+        <link rel="stylesheet" href="enhancements.css?v=3">
+        <link rel="stylesheet" href="toast-notifications.css?v=1">
+        <link rel="stylesheet" href="weather-popup.css?v=1">
+        <link rel="stylesheet" href="chatbot.css?v=4">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="https://awards.infcdn.net/2024/badge-circledLeaves27.css">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    </noscript>
     
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
@@ -242,7 +261,7 @@
     <nav class="navbar" id="navbar" role="navigation" aria-label="Главна навигација">
         <div class="nav-container">
             <a href="index.html" class="logo" aria-label="Крчма Гај - Почетна страна">
-                <img src="images/logo.webp" alt="Крчма Гај Logo">
+                <img src="images/logo.webp" alt="Крчма Гај Logo" width="150" height="50">
             </a>
             
             <!-- Theme Toggle -->
@@ -1482,11 +1501,11 @@
     </script>
     <!--End of Tawk.to Script-->
 
-    <script src="translations.js?v=22"></script>
-    <script src="chatbot.js?v=6"></script>
-    <script src="script.js?v=19"></script>
-    <script src="enhancements.js?v=3"></script>
-    <script src="features.js?v=1"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
+    <script defer src="translations.js?v=22"></script>
+    <script defer src="chatbot.js?v=6"></script>
+    <script defer src="script.js?v=19"></script>
+    <script defer src="enhancements.js?v=3"></script>
+    <script defer src="features.js?v=1"></script>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
 </body>
 </html>
